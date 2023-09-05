@@ -19,7 +19,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>810.4,491.20000000000005</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1068,904</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>LinkedinUpdateProcess_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -124,15 +124,26 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="548.8,426.4" sap2010:WorkflowViewState.IdRef="Sequence_40">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence sap:VirtualizedContainerService.HintSize="548.8,839.2" sap2010:WorkflowViewState.IdRef="Sequence_40">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="486.4,314.4" sap2010:WorkflowViewState.IdRef="TryCatch_23">
+    <TryCatch DisplayName="Try Catch - General Error" sap:VirtualizedContainerService.HintSize="486.4,727.2" sap2010:WorkflowViewState.IdRef="TryCatch_23">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="LinkedinUpdateProcess" sap:VirtualizedContainerService.HintSize="788.8,4834.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="LinkedinUpdateProcess" sap:VirtualizedContainerService.HintSize="449.6,496" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="uploadImageEndpoint" />
             <Variable x:TypeArguments="x:String" Name="uploadImageResponse" />
@@ -150,33 +161,33 @@
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ReadTextFile File="{x:Null}" Content="[ImageIdBody]" DisplayName="Read Text File- ImageId body" FileName="Data\Input\ImageID.json" sap:VirtualizedContainerService.HintSize="726.4,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_14">
+          <ui:ReadTextFile File="{x:Null}" Content="[ImageIdBody]" DisplayName="Read Text File- ImageId body" FileName="Data\Input\ImageID.json" sap:VirtualizedContainerService.HintSize="387.2,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ReadTextFile>
-          <If Condition="[Not in_CurrentL_UpdateStatus.Contains(&quot;L-POSTED&quot;)]" sap:VirtualizedContainerService.HintSize="726.4,4601.6" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[Not in_CurrentL_UpdateStatus.Contains(&quot;L-POSTED&quot;)]" sap:VirtualizedContainerService.HintSize="387.2,263.2" sap2010:WorkflowViewState.IdRef="If_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="692.8,4418.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence sap:VirtualizedContainerService.HintSize="476.79999999999995,676" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="649.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_7">
+                <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_7">
                   <Assign.To>
                     <OutArgument x:TypeArguments="s:String[]">[mediaArray]</OutArgument>
                   </Assign.To>
@@ -184,7 +195,7 @@
                     <InArgument x:TypeArguments="s:String[]">[in_MediaPath.Split(";")]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign sap:VirtualizedContainerService.HintSize="649.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_9">
+                <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_9">
                   <Assign.To>
                     <OutArgument x:TypeArguments="scg:List(x:String)">[postBodyText]</OutArgument>
                   </Assign.To>
@@ -192,51 +203,126 @@
                     <InArgument x:TypeArguments="scg:List(x:String)">[New List(of String)]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <If Condition="[mediaArray.Length &gt; 1]" sap:VirtualizedContainerService.HintSize="649.6,4085.6" sap2010:WorkflowViewState.IdRef="If_4">
+                <If Condition="[mediaArray.Length &gt; 1]" sap:VirtualizedContainerService.HintSize="433.6,343.2" sap2010:WorkflowViewState.IdRef="If_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="616,2205.6" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                    <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_31">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="572.8,1134.4" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[mediaArray]">
+                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="496,268" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[mediaArray]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="x:String">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476.8,946.4" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="480,1204.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[ImageIdBody.Replace(&quot;in_OrgId&quot;, in_OrgID)]" BodyFormat="application/json" DisplayName="HTTP Request- Generate Upload Endpoint" EnableSSLVerification="True" EndPoint="[in_LinkedinBaseUrl + in_LinkedinMediaEndpoint]" sap:VirtualizedContainerService.HintSize="433.6,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_17" Method="POST" OAuth2Token="[in_AuthorizationToken]" Result="[uploadEndpointResponse]" TimeoutMS="6000">
-                                <ui:HttpClient.Attachments>
-                                  <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                                </ui:HttpClient.Attachments>
-                                <ui:HttpClient.Cookies>
-                                  <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                                </ui:HttpClient.Cookies>
-                                <ui:HttpClient.Headers>
-                                  <InArgument x:TypeArguments="x:String" x:Key="LinkedIn-Version">[in_LinkedinApiVersion]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer " + in_AuthorizationToken]</InArgument>
-                                </ui:HttpClient.Headers>
-                                <ui:HttpClient.Parameters>
-                                  <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                                </ui:HttpClient.Parameters>
-                                <ui:HttpClient.UrlSegments>
-                                  <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                                </ui:HttpClient.UrlSegments>
-                              </ui:HttpClient>
-                              <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right- Extract Image ID" FullText="[uploadEndpointResponse]" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_25" Separator=":image:" SeparatorKey="Custom" TextToRight="[imageID]">
+                              <TryCatch DisplayName="Try Catch - Generate Upload Endpoin" sap:VirtualizedContainerService.HintSize="436.8,302.4" sap2010:WorkflowViewState.IdRef="TryCatch_24">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <TryCatch.Try>
+                                  <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[ImageIdBody.Replace(&quot;in_OrgId&quot;, in_OrgID)]" BodyFormat="application/json" DisplayName="HTTP Request- Generate Upload Endpoint" EnableSSLVerification="True" EndPoint="[in_LinkedinBaseUrl + in_LinkedinMediaEndpoint]" sap:VirtualizedContainerService.HintSize="204,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_17" Method="POST" OAuth2Token="[in_AuthorizationToken]" Result="[uploadEndpointResponse]" TimeoutMS="6000">
+                                    <ui:HttpClient.Attachments>
+                                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                    </ui:HttpClient.Attachments>
+                                    <ui:HttpClient.Cookies>
+                                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                    </ui:HttpClient.Cookies>
+                                    <ui:HttpClient.Headers>
+                                      <InArgument x:TypeArguments="x:String" x:Key="LinkedIn-Version">[in_LinkedinApiVersion]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer " + in_AuthorizationToken]</InArgument>
+                                    </ui:HttpClient.Headers>
+                                    <ui:HttpClient.Parameters>
+                                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                    </ui:HttpClient.Parameters>
+                                    <ui:HttpClient.UrlSegments>
+                                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                    </ui:HttpClient.UrlSegments>
+                                  </ui:HttpClient>
+                                </TryCatch.Try>
+                                <TryCatch.Catches>
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_17">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:Exception">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                                          <ui:CommentOut.Body>
+                                            <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                                              <Sequence sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_59" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[exception.Message]" />
+                                                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Error: &quot; + exception.Message]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="387.2,148.8" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Linkedin Automation Generate Upload Endpoint Exception" To="[in_EmailAddress]">
+                                                  <ui:SendOutlookMail.Files>
+                                                    <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                                  </ui:SendOutlookMail.Files>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </ui:SendOutlookMail>
+                                              </Sequence>
+                                            </Sequence>
+                                          </ui:CommentOut.Body>
+                                        </ui:CommentOut>
+                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\SendEmailException.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="PlatformWorkflows\SendEmailException.xaml">
+                                          <ui:InvokeWorkflowFile.Arguments>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_To">
+                                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailAddress" />
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
+                                              <Literal x:TypeArguments="x:String">Linkedin Automation Generate Upload Endpoint Exception</Literal>
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_Body">
+                                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="exception.Message" />
+                                            </InArgument>
+                                          </ui:InvokeWorkflowFile.Arguments>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:InvokeWorkflowFile>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </Catch>
+                                </TryCatch.Catches>
+                              </TryCatch>
+                              <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right- Extract Image ID" FullText="[uploadEndpointResponse]" sap:VirtualizedContainerService.HintSize="436.8,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_25" Separator=":image:" SeparatorKey="Custom" TextToRight="[imageID]">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -244,7 +330,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:TextToLeftRight>
-                              <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right- Format Image ID" FullText="[imageID]" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_26" Separator="[Chr(34)]" SeparatorKey="Custom" TextToLeft="[imageID]">
+                              <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right- Format Image ID" FullText="[imageID]" sap:VirtualizedContainerService.HintSize="436.8,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_26" Separator="[Chr(34)]" SeparatorKey="Custom" TextToLeft="[imageID]">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -252,7 +338,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:TextToLeftRight>
-                              <Assign DisplayName="Assign- Image ID " sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_11">
+                              <Assign DisplayName="Assign- Image ID " sap:VirtualizedContainerService.HintSize="436.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_11">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[mediaId]</OutArgument>
                                 </Assign.To>
@@ -260,7 +346,7 @@
                                   <InArgument x:TypeArguments="x:String">[imageID]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right- Extract Upload Endpoint" FullText="[uploadEndpointResponse]" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_28" Separator="[&quot;uploadUrl&quot; + Chr(34) + &quot;:&quot; + Chr(34)]" SeparatorKey="Custom" TextToRight="[uploadImageEndpoint]">
+                              <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right- Extract Upload Endpoint" FullText="[uploadEndpointResponse]" sap:VirtualizedContainerService.HintSize="436.8,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_28" Separator="[&quot;uploadUrl&quot; + Chr(34) + &quot;:&quot; + Chr(34)]" SeparatorKey="Custom" TextToRight="[uploadImageEndpoint]">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -268,7 +354,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:TextToLeftRight>
-                              <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right- Format Upload Endpoint" FullText="[uploadImageEndpoint]" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_29" Separator="[Chr(34) + &quot;,&quot; + Chr(34) + &quot;image&quot; + Chr(34)]" SeparatorKey="Custom" TextToLeft="[uploadImageEndpoint]">
+                              <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right- Format Upload Endpoint" FullText="[uploadImageEndpoint]" sap:VirtualizedContainerService.HintSize="436.8,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_29" Separator="[Chr(34) + &quot;,&quot; + Chr(34) + &quot;image&quot; + Chr(34)]" SeparatorKey="Custom" TextToLeft="[uploadImageEndpoint]">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -276,30 +362,80 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:TextToLeftRight>
-                              <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/binary" DisplayName="HTTP Request- Upload Image" EnableSSLVerification="True" EndPoint="[uploadImageEndpoint]" sap:VirtualizedContainerService.HintSize="433.6,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_18" Method="PUT" OAuth2Token="[in_AuthorizationToken]" Result="[uploadImageResponse]" TimeoutMS="6000">
-                                <ui:HttpClient.Attachments>
-                                  <InArgument x:TypeArguments="x:String" x:Key="file">[currentItem]</InArgument>
-                                </ui:HttpClient.Attachments>
-                                <ui:HttpClient.Cookies>
-                                  <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                                </ui:HttpClient.Cookies>
-                                <ui:HttpClient.Headers>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer " + in_AuthorizationToken]</InArgument>
-                                </ui:HttpClient.Headers>
-                                <ui:HttpClient.Parameters>
-                                  <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                                </ui:HttpClient.Parameters>
-                                <ui:HttpClient.UrlSegments>
-                                  <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                                </ui:HttpClient.UrlSegments>
+                              <TryCatch DisplayName="Try Catch - Upload Multiple Image" sap:VirtualizedContainerService.HintSize="436.8,187.2" sap2010:WorkflowViewState.IdRef="TryCatch_25">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                              </ui:HttpClient>
-                              <uasc:AppendItemToCollection x:TypeArguments="x:String" Collection="[postBodyText]" DisplayName="Append Items to Collection" sap:VirtualizedContainerService.HintSize="433.6,141.6" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_2">
+                                <TryCatch.Try>
+                                  <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/binary" DisplayName="HTTP Request- Upload Image" EnableSSLVerification="True" EndPoint="[uploadImageEndpoint]" sap:VirtualizedContainerService.HintSize="204,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_18" Method="PUT" OAuth2Token="[in_AuthorizationToken]" Result="[uploadImageResponse]" TimeoutMS="6000">
+                                    <ui:HttpClient.Attachments>
+                                      <InArgument x:TypeArguments="x:String" x:Key="file">[currentItem]</InArgument>
+                                    </ui:HttpClient.Attachments>
+                                    <ui:HttpClient.Cookies>
+                                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                    </ui:HttpClient.Cookies>
+                                    <ui:HttpClient.Headers>
+                                      <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer " + in_AuthorizationToken]</InArgument>
+                                    </ui:HttpClient.Headers>
+                                    <ui:HttpClient.Parameters>
+                                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                    </ui:HttpClient.Parameters>
+                                    <ui:HttpClient.UrlSegments>
+                                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                    </ui:HttpClient.UrlSegments>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:HttpClient>
+                                </TryCatch.Try>
+                                <TryCatch.Catches>
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_18">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:Exception">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\SendEmailException.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="PlatformWorkflows\SendEmailException.xaml">
+                                          <ui:InvokeWorkflowFile.Arguments>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_To">
+                                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailAddress" />
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
+                                              <Literal x:TypeArguments="x:String">Linkedin Automation Upload Multiple Image Exception</Literal>
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_Body">
+                                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="exception.Message" />
+                                            </InArgument>
+                                          </ui:InvokeWorkflowFile.Arguments>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:InvokeWorkflowFile>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </Catch>
+                                </TryCatch.Catches>
+                              </TryCatch>
+                              <uasc:AppendItemToCollection x:TypeArguments="x:String" Collection="[postBodyText]" DisplayName="Append Items to Collection" sap:VirtualizedContainerService.HintSize="436.8,52.8" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_2">
                                 <uasc:AppendItemToCollection.Items>
                                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                                     <InArgument x:TypeArguments="x:String" xml:space="preserve">["{" + 
@@ -315,11 +451,11 @@
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ForEach>
-                      <Assign sap:VirtualizedContainerService.HintSize="572.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_12">
+                      <Assign sap:VirtualizedContainerService.HintSize="496,81.6" sap2010:WorkflowViewState.IdRef="Assign_12">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[code]</OutArgument>
                         </Assign.To>
@@ -327,7 +463,7 @@
                           <InArgument x:TypeArguments="x:String">[String.Join("," , postBodyText)]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:ReadTextFile File="{x:Null}" Content="[postBody]" DisplayName="Read Text File- Post Request Body" FileName="Data\Input\bodyMultiImage.json" sap:VirtualizedContainerService.HintSize="572.8,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_12">
+                      <ui:ReadTextFile File="{x:Null}" Content="[postBody]" DisplayName="Read Text File- Post Request Body" FileName="Data\Input\bodyMultiImage.json" sap:VirtualizedContainerService.HintSize="496,52.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -335,7 +471,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ReadTextFile>
-                      <Assign sap:VirtualizedContainerService.HintSize="572.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_13">
+                      <Assign sap:VirtualizedContainerService.HintSize="496,81.6" sap2010:WorkflowViewState.IdRef="Assign_13">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[postBody]</OutArgument>
                         </Assign.To>
@@ -343,34 +479,90 @@
                           <InArgument x:TypeArguments="x:String">[postBody.Replace("""in_Code""", code).Replace("in_Text", in_Text).Replace("in_OrgId", in_OrgID)]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Sequence sap:VirtualizedContainerService.HintSize="572.8,577.6" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                      <Sequence sap:VirtualizedContainerService.HintSize="496,602.4" sap2010:WorkflowViewState.IdRef="Sequence_41">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[postBody]" BodyFormat="application/json" DisplayName="HTTP Request- Post Update to LinkedIn" EnableSSLVerification="True" EndPoint="[in_LinkedinBaseUrl + &quot;/posts&quot;]" sap:VirtualizedContainerService.HintSize="510.4,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_16" Method="POST" OAuth2Token="[in_AuthorizationToken]" Result="[postUpdateResponse]" StatusCode="[linkedinStatusCode]" TimeoutMS="6000">
-                          <ui:HttpClient.Attachments>
-                            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                          </ui:HttpClient.Attachments>
-                          <ui:HttpClient.Cookies>
-                            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                          </ui:HttpClient.Cookies>
-                          <ui:HttpClient.Headers>
-                            <InArgument x:TypeArguments="x:String" x:Key="LinkedIn-Version">[in_LinkedinApiVersion]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer " + in_AuthorizationToken]</InArgument>
-                          </ui:HttpClient.Headers>
-                          <ui:HttpClient.Parameters>
-                            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                          </ui:HttpClient.Parameters>
-                          <ui:HttpClient.UrlSegments>
-                            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                          </ui:HttpClient.UrlSegments>
-                        </ui:HttpClient>
-                        <If Condition="[linkedinStatusCode = 200 or  linkedinStatusCode = 201]" sap:VirtualizedContainerService.HintSize="510.4,354.4" sap2010:WorkflowViewState.IdRef="If_8">
+                        <TryCatch DisplayName="Try Catch - Post Multiple Image" sap:VirtualizedContainerService.HintSize="433.6,187.2" sap2010:WorkflowViewState.IdRef="TryCatch_26">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <TryCatch.Try>
+                            <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[postBody]" BodyFormat="application/json" DisplayName="HTTP Request- Post Update to LinkedIn" EnableSSLVerification="True" EndPoint="[in_LinkedinBaseUrl + &quot;/posts&quot;]" sap:VirtualizedContainerService.HintSize="204,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_16" Method="POST" OAuth2Token="[in_AuthorizationToken]" Result="[postUpdateResponse]" StatusCode="[linkedinStatusCode]" TimeoutMS="6000">
+                              <ui:HttpClient.Attachments>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                              </ui:HttpClient.Attachments>
+                              <ui:HttpClient.Cookies>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                              </ui:HttpClient.Cookies>
+                              <ui:HttpClient.Headers>
+                                <InArgument x:TypeArguments="x:String" x:Key="LinkedIn-Version">[in_LinkedinApiVersion]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer " + in_AuthorizationToken]</InArgument>
+                              </ui:HttpClient.Headers>
+                              <ui:HttpClient.Parameters>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                              </ui:HttpClient.Parameters>
+                              <ui:HttpClient.UrlSegments>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                              </ui:HttpClient.UrlSegments>
+                            </ui:HttpClient>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_19">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <Sequence sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\SendEmailException.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="PlatformWorkflows\SendEmailException.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_To">
+                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailAddress" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
+                                        <Literal x:TypeArguments="x:String">Linkedin Automation Post Multiple Image Exception</Literal>
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_Body">
+                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="exception.Message" />
+                                      </InArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:InvokeWorkflowFile>
+                                </Sequence>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                        </TryCatch>
+                        <If Condition="[linkedinStatusCode = 200 or  linkedinStatusCode = 201]" sap:VirtualizedContainerService.HintSize="433.6,263.2" sap2010:WorkflowViewState.IdRef="If_8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                            <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_42">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -400,31 +592,99 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence sap:VirtualizedContainerService.HintSize="616,1696.8" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                    <Sequence sap:VirtualizedContainerService.HintSize="492.79999999999995,1328" sap2010:WorkflowViewState.IdRef="Sequence_32">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[ImageIdBody.Replace(&quot;in_OrgId&quot;, in_OrgID)]" BodyFormat="application/json" DisplayName="HTTP Request- Generate Upload Endpoint" EnableSSLVerification="True" EndPoint="[in_LinkedinBaseUrl + in_LinkedinMediaEndpoint]" sap:VirtualizedContainerService.HintSize="572.8,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_19" Method="POST" OAuth2Token="[in_AuthorizationToken]" Result="[uploadEndpointResponse]" TimeoutMS="6000">
-                        <ui:HttpClient.Attachments>
-                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                        </ui:HttpClient.Attachments>
-                        <ui:HttpClient.Cookies>
-                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                        </ui:HttpClient.Cookies>
-                        <ui:HttpClient.Headers>
-                          <InArgument x:TypeArguments="x:String" x:Key="LinkedIn-Version">[in_LinkedinApiVersion]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer " + in_AuthorizationToken]</InArgument>
-                        </ui:HttpClient.Headers>
-                        <ui:HttpClient.Parameters>
-                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                        </ui:HttpClient.Parameters>
-                        <ui:HttpClient.UrlSegments>
-                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                        </ui:HttpClient.UrlSegments>
-                      </ui:HttpClient>
-                      <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right- Extract Image ID" FullText="[uploadEndpointResponse]" sap:VirtualizedContainerService.HintSize="572.8,274.4" sap2010:WorkflowViewState.IdRef="TextToLeftRight_30" Separator=":image:" SeparatorKey="Custom" TextToRight="[imageID]">
+                      <TryCatch DisplayName="Try Catch - Generate Single Media Upload Endpoint" sap:VirtualizedContainerService.HintSize="449.6,302.4" sap2010:WorkflowViewState.IdRef="TryCatch_27">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <TryCatch.Try>
+                          <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[ImageIdBody.Replace(&quot;in_OrgId&quot;, in_OrgID)]" BodyFormat="application/json" DisplayName="HTTP Request- Generate Upload Endpoint" EnableSSLVerification="True" EndPoint="[in_LinkedinBaseUrl + in_LinkedinMediaEndpoint]" sap:VirtualizedContainerService.HintSize="204,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_19" Method="POST" OAuth2Token="[in_AuthorizationToken]" Result="[uploadEndpointResponse]" TimeoutMS="6000">
+                            <ui:HttpClient.Attachments>
+                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                            </ui:HttpClient.Attachments>
+                            <ui:HttpClient.Cookies>
+                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                            </ui:HttpClient.Cookies>
+                            <ui:HttpClient.Headers>
+                              <InArgument x:TypeArguments="x:String" x:Key="LinkedIn-Version">[in_LinkedinApiVersion]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer " + in_AuthorizationToken]</InArgument>
+                            </ui:HttpClient.Headers>
+                            <ui:HttpClient.Parameters>
+                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                            </ui:HttpClient.Parameters>
+                            <ui:HttpClient.UrlSegments>
+                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                            </ui:HttpClient.UrlSegments>
+                          </ui:HttpClient>
+                        </TryCatch.Try>
+                        <TryCatch.Catches>
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_20">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ActivityAction x:TypeArguments="s:Exception">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                              </ActivityAction.Argument>
+                              <Sequence sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Sequence sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_62" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[exception.Message]" />
+                                  <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Error: &quot; + exception.Message]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="387.2,148.8" sap2010:WorkflowViewState.IdRef="SendOutlookMail_5" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Linkedin Automation Generate Single Image endpoint Exception" To="[in_EmailAddress]">
+                                    <ui:SendOutlookMail.Files>
+                                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                    </ui:SendOutlookMail.Files>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:SendOutlookMail>
+                                </Sequence>
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\SendEmailException.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="449.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="PlatformWorkflows\SendEmailException.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_To">
+                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailAddress" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
+                                      <Literal x:TypeArguments="x:String">Linkedin Automation Generate Single Image endpoint Exception</Literal>
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_Body">
+                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="exception.Message" />
+                                    </InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:InvokeWorkflowFile>
+                              </Sequence>
+                            </ActivityAction>
+                          </Catch>
+                        </TryCatch.Catches>
+                      </TryCatch>
+                      <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right- Extract Image ID" FullText="[uploadEndpointResponse]" sap:VirtualizedContainerService.HintSize="449.6,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_30" Separator=":image:" SeparatorKey="Custom" TextToRight="[imageID]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -432,7 +692,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:TextToLeftRight>
-                      <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right- Format Image ID" FullText="[imageID]" sap:VirtualizedContainerService.HintSize="572.8,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_31" Separator="[Chr(34)]" SeparatorKey="Custom" TextToLeft="[imageID]">
+                      <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right- Format Image ID" FullText="[imageID]" sap:VirtualizedContainerService.HintSize="449.6,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_31" Separator="[Chr(34)]" SeparatorKey="Custom" TextToLeft="[imageID]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -440,7 +700,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:TextToLeftRight>
-                      <Assign DisplayName="Assign- Image ID " sap:VirtualizedContainerService.HintSize="572.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_14">
+                      <Assign DisplayName="Assign- Image ID " sap:VirtualizedContainerService.HintSize="449.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_14">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[mediaId]</OutArgument>
                         </Assign.To>
@@ -448,7 +708,7 @@
                           <InArgument x:TypeArguments="x:String">[imageID]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right- Extract Upload Endpoint" FullText="[uploadEndpointResponse]" sap:VirtualizedContainerService.HintSize="572.8,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_32" Separator="[&quot;uploadUrl&quot; + Chr(34) + &quot;:&quot; + Chr(34)]" SeparatorKey="Custom" TextToRight="[uploadImageEndpoint]">
+                      <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right- Extract Upload Endpoint" FullText="[uploadEndpointResponse]" sap:VirtualizedContainerService.HintSize="449.6,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_32" Separator="[&quot;uploadUrl&quot; + Chr(34) + &quot;:&quot; + Chr(34)]" SeparatorKey="Custom" TextToRight="[uploadImageEndpoint]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -456,7 +716,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:TextToLeftRight>
-                      <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right- Format Upload Endpoint" FullText="[uploadImageEndpoint]" sap:VirtualizedContainerService.HintSize="572.8,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_33" Separator="[Chr(34) + &quot;,&quot; + Chr(34) + &quot;image&quot; + Chr(34)]" SeparatorKey="Custom" TextToLeft="[uploadImageEndpoint]">
+                      <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right- Format Upload Endpoint" FullText="[uploadImageEndpoint]" sap:VirtualizedContainerService.HintSize="449.6,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_33" Separator="[Chr(34) + &quot;,&quot; + Chr(34) + &quot;image&quot; + Chr(34)]" SeparatorKey="Custom" TextToLeft="[uploadImageEndpoint]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -464,24 +724,74 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:TextToLeftRight>
-                      <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/binary" DisplayName="HTTP Request- Upload Image" EnableSSLVerification="True" EndPoint="[uploadImageEndpoint]" sap:VirtualizedContainerService.HintSize="572.8,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_20" Method="PUT" Result="[uploadImageResponse]" TimeoutMS="6000">
-                        <ui:HttpClient.Attachments>
-                          <InArgument x:TypeArguments="x:String" x:Key="file">[in_MediaPath]</InArgument>
-                        </ui:HttpClient.Attachments>
-                        <ui:HttpClient.Cookies>
-                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                        </ui:HttpClient.Cookies>
-                        <ui:HttpClient.Headers>
-                          <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer " + in_AuthorizationToken]</InArgument>
-                        </ui:HttpClient.Headers>
-                        <ui:HttpClient.Parameters>
-                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                        </ui:HttpClient.Parameters>
-                        <ui:HttpClient.UrlSegments>
-                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                        </ui:HttpClient.UrlSegments>
-                      </ui:HttpClient>
-                      <ui:ReadTextFile File="{x:Null}" Content="[postBody]" DisplayName="Read Text File- Post Request Body" FileName="Data\Input\body.json" sap:VirtualizedContainerService.HintSize="572.8,52.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_13">
+                      <TryCatch DisplayName="Try Catch - Upload single Image" sap:VirtualizedContainerService.HintSize="449.6,187.2" sap2010:WorkflowViewState.IdRef="TryCatch_28">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <TryCatch.Try>
+                          <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/binary" DisplayName="HTTP Request- Upload Image" EnableSSLVerification="True" EndPoint="[uploadImageEndpoint]" sap:VirtualizedContainerService.HintSize="204,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_20" Method="PUT" Result="[uploadImageResponse]" TimeoutMS="6000">
+                            <ui:HttpClient.Attachments>
+                              <InArgument x:TypeArguments="x:String" x:Key="file">[in_MediaPath]</InArgument>
+                            </ui:HttpClient.Attachments>
+                            <ui:HttpClient.Cookies>
+                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                            </ui:HttpClient.Cookies>
+                            <ui:HttpClient.Headers>
+                              <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer " + in_AuthorizationToken]</InArgument>
+                            </ui:HttpClient.Headers>
+                            <ui:HttpClient.Parameters>
+                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                            </ui:HttpClient.Parameters>
+                            <ui:HttpClient.UrlSegments>
+                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                            </ui:HttpClient.UrlSegments>
+                          </ui:HttpClient>
+                        </TryCatch.Try>
+                        <TryCatch.Catches>
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_21">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ActivityAction x:TypeArguments="s:Exception">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                              </ActivityAction.Argument>
+                              <Sequence sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_63">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\SendEmailException.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="PlatformWorkflows\SendEmailException.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_To">
+                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailAddress" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
+                                      <Literal x:TypeArguments="x:String">Linkedin Automation Upload Single Image Exception</Literal>
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_Body">
+                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="exception.Message" />
+                                    </InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:InvokeWorkflowFile>
+                              </Sequence>
+                            </ActivityAction>
+                          </Catch>
+                        </TryCatch.Catches>
+                      </TryCatch>
+                      <ui:ReadTextFile File="{x:Null}" Content="[postBody]" DisplayName="Read Text File- Post Request Body" FileName="Data\Input\body.json" sap:VirtualizedContainerService.HintSize="449.6,52.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_13">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -489,34 +799,89 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ReadTextFile>
-                      <Sequence sap:VirtualizedContainerService.HintSize="572.8,577.6" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                      <Sequence sap:VirtualizedContainerService.HintSize="552,733.6" sap2010:WorkflowViewState.IdRef="Sequence_46">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[postBody.Replace(&quot;in_MediaID&quot;, mediaId).Replace(&quot;in_Text&quot;, in_Text).Replace(&quot;in_OrgId&quot;, in_OrgID)]" BodyFormat="application/json" DisplayName="HTTP Request- Post Update to LinkedIn" EnableSSLVerification="True" EndPoint="[in_LinkedinBaseUrl + &quot;/posts&quot;]" sap:VirtualizedContainerService.HintSize="510.4,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_21" Method="POST" OAuth2Token="[in_AuthorizationToken]" Result="[postUpdateResponse]" StatusCode="[linkedinStatusCode]" TimeoutMS="6000">
-                          <ui:HttpClient.Attachments>
-                            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                          </ui:HttpClient.Attachments>
-                          <ui:HttpClient.Cookies>
-                            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                          </ui:HttpClient.Cookies>
-                          <ui:HttpClient.Headers>
-                            <InArgument x:TypeArguments="x:String" x:Key="LinkedIn-Version">[in_LinkedinApiVersion]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer " + in_AuthorizationToken]</InArgument>
-                          </ui:HttpClient.Headers>
-                          <ui:HttpClient.Parameters>
-                            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                          </ui:HttpClient.Parameters>
-                          <ui:HttpClient.UrlSegments>
-                            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                          </ui:HttpClient.UrlSegments>
-                        </ui:HttpClient>
-                        <If Condition="[linkedinStatusCode = 200 or linkedinStatusCode = 201]" sap:VirtualizedContainerService.HintSize="510.4,354.4" sap2010:WorkflowViewState.IdRef="If_9">
+                        <TryCatch DisplayName="Try Catch - Post Single Image" sap:VirtualizedContainerService.HintSize="489.6,318.4" sap2010:WorkflowViewState.IdRef="TryCatch_29">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <TryCatch.Try>
+                            <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[postBody.Replace(&quot;in_MediaID&quot;, mediaId).Replace(&quot;in_Text&quot;, in_Text).Replace(&quot;in_OrgId&quot;, in_OrgID)]" BodyFormat="application/json" DisplayName="HTTP Request- Post Update to LinkedIn" EnableSSLVerification="True" EndPoint="[in_LinkedinBaseUrl + &quot;/posts&quot;]" sap:VirtualizedContainerService.HintSize="204,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_21" Method="POST" OAuth2Token="[in_AuthorizationToken]" Result="[postUpdateResponse]" StatusCode="[linkedinStatusCode]" TimeoutMS="6000">
+                              <ui:HttpClient.Attachments>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                              </ui:HttpClient.Attachments>
+                              <ui:HttpClient.Cookies>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                              </ui:HttpClient.Cookies>
+                              <ui:HttpClient.Headers>
+                                <InArgument x:TypeArguments="x:String" x:Key="LinkedIn-Version">[in_LinkedinApiVersion]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer " + in_AuthorizationToken]</InArgument>
+                              </ui:HttpClient.Headers>
+                              <ui:HttpClient.Parameters>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                              </ui:HttpClient.Parameters>
+                              <ui:HttpClient.UrlSegments>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                              </ui:HttpClient.UrlSegments>
+                            </ui:HttpClient>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="456,153.6" sap2010:WorkflowViewState.IdRef="Catch`1_22">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <Sequence sap:VirtualizedContainerService.HintSize="449.6,225.60000000000002" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\SendEmailException.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="PlatformWorkflows\SendEmailException.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_To">
+                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailAddress" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
+                                        <Literal x:TypeArguments="x:String">Linkedin Automation Post single Image Exception</Literal>
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_Body">
+                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="exception.Message" />
+                                      </InArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:InvokeWorkflowFile>
+                                </Sequence>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                        </TryCatch>
+                        <If Condition="[linkedinStatusCode = 200 or linkedinStatusCode = 201]" sap:VirtualizedContainerService.HintSize="489.6,263.2" sap2010:WorkflowViewState.IdRef="If_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                            <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_44">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -543,7 +908,7 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -566,19 +931,30 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_39">
+            <Sequence sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_55">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_58" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[exception.Message]" />
-              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Error: &quot; + exception.Message]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="387.2,148.8" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Linkedin Automation Bot Exception" To="[in_EmailAddress]">
-                <ui:SendOutlookMail.Files>
-                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                </ui:SendOutlookMail.Files>
-              </ui:SendOutlookMail>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\SendEmailException.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PlatformWorkflows\SendEmailException.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_To">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailAddress" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
+                    <Literal x:TypeArguments="x:String">Linkedin Automation Bot Exception</Literal>
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_Body">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="exception.Message" />
+                  </InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
             </Sequence>
           </ActivityAction>
         </Catch>
