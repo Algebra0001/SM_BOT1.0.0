@@ -1,5 +1,5 @@
 ﻿{
   "initializeUploadRequest": {
-        "owner": "urn:li:person:in_OrgId"
+        "owner": "urn:li:in_Entity:in_OrgId"
   }
 }
