@@ -20,7 +20,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1068,904</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>850.4,1048.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>LinkedinUpdateProcess_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -130,21 +130,21 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="548.8,839.2" sap2010:WorkflowViewState.IdRef="Sequence_40">
+  <Sequence sap:VirtualizedContainerService.HintSize="548.8,984" sap2010:WorkflowViewState.IdRef="Sequence_40">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch - General Error" sap:VirtualizedContainerService.HintSize="486.4,727.2" sap2010:WorkflowViewState.IdRef="TryCatch_23">
+    <TryCatch DisplayName="Try Catch - General Error" sap:VirtualizedContainerService.HintSize="486.4,872" sap2010:WorkflowViewState.IdRef="TryCatch_23">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="LinkedinUpdateProcess" sap:VirtualizedContainerService.HintSize="449.6,496" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="LinkedinUpdateProcess" sap:VirtualizedContainerService.HintSize="449.6,640.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="uploadImageEndpoint" />
             <Variable x:TypeArguments="x:String" Name="uploadImageResponse" />
@@ -166,15 +166,23 @@
               <x:Boolean x:Key="IsPinned">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ReadTextFile File="{x:Null}" Content="[ImageIdBody]" DisplayName="Read Text File- ImageId body" FileName="Data\Input\ImageID.json" sap:VirtualizedContainerService.HintSize="387.2,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_14">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_63" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Started Linkedin Posting&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+          <ui:ReadTextFile File="{x:Null}" Content="[ImageIdBody]" DisplayName="Read Text File- ImageId body" FileName="Data\Input\ImageID.json" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_14">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ReadTextFile>
-          <If Condition="[Not in_CurrentL_UpdateStatus.Contains(&quot;L-POSTED&quot;)]" sap:VirtualizedContainerService.HintSize="387.2,263.2" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[Not in_CurrentL_UpdateStatus.Contains(&quot;L - POSTED&quot;)]" sap:VirtualizedContainerService.HintSize="387.2,343.2" sap2010:WorkflowViewState.IdRef="If_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -212,7 +220,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="542.4,1451.2" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                    <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_31">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -224,17 +232,17 @@
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="480,1204.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_30">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <TryCatch DisplayName="Try Catch - Generate Upload Endpoin" sap:VirtualizedContainerService.HintSize="436.8,302.4" sap2010:WorkflowViewState.IdRef="TryCatch_24">
+                              <TryCatch DisplayName="Try Catch - Generate Upload Endpoin" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_24">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <TryCatch.Try>
@@ -317,7 +325,7 @@
                                   </Catch>
                                 </TryCatch.Catches>
                               </TryCatch>
-                              <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right- Extract Image ID" FullText="[uploadEndpointResponse]" sap:VirtualizedContainerService.HintSize="436.8,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_25" Separator=":image:" SeparatorKey="Custom" TextToRight="[imageID]">
+                              <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right- Extract Image ID" FullText="[uploadEndpointResponse]" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_25" Separator=":image:" SeparatorKey="Custom" TextToRight="[imageID]">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -325,7 +333,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:TextToLeftRight>
-                              <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right- Format Image ID" FullText="[imageID]" sap:VirtualizedContainerService.HintSize="436.8,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_26" Separator="[Chr(34)]" SeparatorKey="Custom" TextToLeft="[imageID]">
+                              <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right- Format Image ID" FullText="[imageID]" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_26" Separator="[Chr(34)]" SeparatorKey="Custom" TextToLeft="[imageID]">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -333,7 +341,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:TextToLeftRight>
-                              <Assign DisplayName="Assign- Image ID " sap:VirtualizedContainerService.HintSize="436.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_11">
+                              <Assign DisplayName="Assign- Image ID " sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_11">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[mediaId]</OutArgument>
                                 </Assign.To>
@@ -341,7 +349,7 @@
                                   <InArgument x:TypeArguments="x:String">[imageID]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right- Extract Upload Endpoint" FullText="[uploadEndpointResponse]" sap:VirtualizedContainerService.HintSize="436.8,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_28" Separator="[&quot;uploadUrl&quot; + Chr(34) + &quot;:&quot; + Chr(34)]" SeparatorKey="Custom" TextToRight="[uploadImageEndpoint]">
+                              <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right- Extract Upload Endpoint" FullText="[uploadEndpointResponse]" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_28" Separator="[&quot;uploadUrl&quot; + Chr(34) + &quot;:&quot; + Chr(34)]" SeparatorKey="Custom" TextToRight="[uploadImageEndpoint]">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -349,7 +357,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:TextToLeftRight>
-                              <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right- Format Upload Endpoint" FullText="[uploadImageEndpoint]" sap:VirtualizedContainerService.HintSize="436.8,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_29" Separator="[Chr(34) + &quot;,&quot; + Chr(34) + &quot;image&quot; + Chr(34)]" SeparatorKey="Custom" TextToLeft="[uploadImageEndpoint]">
+                              <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right- Format Upload Endpoint" FullText="[uploadImageEndpoint]" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="TextToLeftRight_29" Separator="[Chr(34) + &quot;,&quot; + Chr(34) + &quot;image&quot; + Chr(34)]" SeparatorKey="Custom" TextToLeft="[uploadImageEndpoint]">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -357,11 +365,11 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:TextToLeftRight>
-                              <TryCatch DisplayName="Try Catch - Upload Multiple Image" sap:VirtualizedContainerService.HintSize="436.8,187.2" sap2010:WorkflowViewState.IdRef="TryCatch_25">
+                              <TryCatch DisplayName="Try Catch - Upload Multiple Image" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_25">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <TryCatch.Try>
@@ -390,7 +398,7 @@
                                   </ui:HttpClient>
                                 </TryCatch.Try>
                                 <TryCatch.Catches>
-                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_18">
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_18">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -424,7 +432,7 @@
                                   </Catch>
                                 </TryCatch.Catches>
                               </TryCatch>
-                              <uasc:AppendItemToCollection x:TypeArguments="x:String" Collection="[postBodyText]" DisplayName="Append Items to Collection" sap:VirtualizedContainerService.HintSize="436.8,52.8" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_2">
+                              <uasc:AppendItemToCollection x:TypeArguments="x:String" Collection="[postBodyText]" DisplayName="Append Items to Collection" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_2">
                                 <uasc:AppendItemToCollection.Items>
                                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                                     <InArgument x:TypeArguments="x:String" xml:space="preserve">["{" + 
@@ -545,7 +553,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                            <Sequence sap:VirtualizedContainerService.HintSize="476.79999999999995,171.2" sap2010:WorkflowViewState.IdRef="Sequence_42">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -556,13 +564,13 @@
                                   <OutArgument x:TypeArguments="x:String">[out_LinkedinStatus]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">L- Posted</InArgument>
+                                  <InArgument x:TypeArguments="x:String">L - POSTED</InArgument>
                                 </Assign.Value>
                               </Assign>
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                            <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_43">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -575,7 +583,7 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                    <Sequence sap:VirtualizedContainerService.HintSize="542.4,2077.6" sap2010:WorkflowViewState.IdRef="Sequence_32">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -846,7 +854,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                            <Sequence sap:VirtualizedContainerService.HintSize="476.79999999999995,171.2" sap2010:WorkflowViewState.IdRef="Sequence_44">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -857,7 +865,7 @@
                                   <OutArgument x:TypeArguments="x:String">[out_LinkedinStatus]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">L- Posted</InArgument>
+                                  <InArgument x:TypeArguments="x:String">L - POSTED</InArgument>
                                 </Assign.Value>
                               </Assign>
                             </Sequence>
