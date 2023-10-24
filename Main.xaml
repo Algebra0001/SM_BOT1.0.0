@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="850.4,3462.4" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="850.4,3307.2" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -125,7 +125,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="626.4,3397.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="626.4,3242.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="config" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_UpdateFile" />
@@ -147,6 +147,7 @@
       <Variable x:TypeArguments="x:String" Name="linkedinStatus" />
       <Variable x:TypeArguments="x:String" Name="twitterStatus" />
       <Variable x:TypeArguments="x:String" Name="updateFilePath" />
+      <Variable x:TypeArguments="x:String" Name="flickrStatus" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -215,13 +216,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="To loop through the dataTable taht was just being parsed." DataTable="[dt_UpdateFile]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="564,2609.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="To loop through the dataTable taht was just being parsed." DataTable="[dt_UpdateFile]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="564,2454.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="530.4,2390.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="530.4,2235.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="description" />
               <Variable x:TypeArguments="x:String" Name="reason" />
@@ -231,13 +232,14 @@
               <Variable x:TypeArguments="x:String" Name="currentF_updateStatus" />
               <Variable x:TypeArguments="x:String" Name="currentL_updateStatus" />
               <Variable x:TypeArguments="x:String" Name="currentFl_updateStatus" />
+              <Variable x:TypeArguments="x:String" Name="title" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MultipleAssign sap2010:Annotation.AnnotationText="This is to declare the rows of the data table" DisplayName="Declare dt Rows" sap:VirtualizedContainerService.HintSize="487.2,350.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+            <ui:MultipleAssign sap2010:Annotation.AnnotationText="This is to declare the rows of the data table" DisplayName="Declare dt Rows" sap:VirtualizedContainerService.HintSize="487.2,382.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
@@ -304,6 +306,14 @@
                       <InArgument x:TypeArguments="x:String">[CurrentRow.Item("STATUS").ToString]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_46">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[title]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[CurrentRow.Item("TITLE").ToString]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
               <sap:WorkflowViewStateService.ViewState>
@@ -314,7 +324,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:MultipleAssign>
-            <If Condition="[currentDate = Now.ToString(&quot;dd/MM/yyyy&quot;)]" DisplayName="If - for Date" sap:VirtualizedContainerService.HintSize="487.2,1788.8" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[currentDate = Now.ToString(&quot;dd/MM/yyyy&quot;)]" DisplayName="If - for Date" sap:VirtualizedContainerService.HintSize="487.2,1601.6" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -322,195 +332,200 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="453.6,1605.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence sap:VirtualizedContainerService.HintSize="453.6,1418.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="mediaId" />
                     <Variable x:TypeArguments="x:Int32" Name="statusCode" />
                     <Variable x:TypeArguments="x:String" Name="response" />
-                    <Variable x:TypeArguments="x:String" Name="flickrStatus" />
+                    <Variable x:TypeArguments="x:String" Name="wpStatus" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[CurrentRow.Item(&quot;SHOULD_POST_FACEBOOK&quot;).ToString = &quot;YES&quot;]" DisplayName="If - Post Facebook" sap:VirtualizedContainerService.HintSize="410.4,183.2" sap2010:WorkflowViewState.IdRef="If_61">
+                  <If Condition="[CurrentRow.Item(&quot;SHOULD_POST_FACEBOOK&quot;).ToString = &quot;YES&quot;]" DisplayName="If - Post Facebook" sap:VirtualizedContainerService.HintSize="410.4,52.8" sap2010:WorkflowViewState.IdRef="If_61">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="376.8,203.2" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                      <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="300,142.4" sap2010:WorkflowViewState.IdRef="Sequence_76">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="FacebookUpdateProcess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_62" UnSafe="False" WorkflowFileName="PlatformWorkflows\FacebookUpdateProcess.xaml">
-                          <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_PhotoPath">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="mediaPath" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_Description">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="description" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_Id">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Facebook_PageId&quot;).ToString" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_AccessToken">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Facebook_AccessToken&quot;).ToString" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_FacebookBaseUrl">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Facebook_BaseUrl&quot;).ToString" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_CurrentF_UpdateStatus">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="currentF_updateStatus" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:Int32" x:Key="in_Counter">
-                              <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="counter" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;SocialMediaUpdateFilePath&quot;).ToString" />
-                            </InArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="out_FacebookStatus">
-                              <VisualBasicReference x:TypeArguments="x:String" ExpressionText="facebookStatus" />
-                            </OutArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_EmailAddress">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;SocialMediaUpdateExceptionMail&quot;).ToString" />
-                            </InArgument>
-                          </ui:InvokeWorkflowFile.Arguments>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_78">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="FacebookUpdateProcess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_65" UnSafe="False" WorkflowFileName="PlatformWorkflows\FacebookUpdateProcess.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_PhotoPath">[mediaPath]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_Description">[description]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_Id">[config("Facebook_PageId").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_AccessToken">[config("Facebook_AccessToken").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_FacebookBaseUrl">[config("Facebook_BaseUrl").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_CurrentF_UpdateStatus">[currentF_updateStatus]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_Counter">[counter]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[config("SocialMediaUpdateFilePath").ToString]</InArgument>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="out_FacebookStatus">[facebookStatus]</OutArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_EmailAddress">[config("SocialMediaUpdateExceptionMail").ToString]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:InvokeWorkflowFile>
+                            </Sequence>
+                          </ui:CommentOut.Body>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                        </ui:InvokeWorkflowFile>
+                        </ui:CommentOut>
                       </Sequence>
                     </If.Then>
                     <If.Else>
                       <Sequence DisplayName="" sap2010:WorkflowViewState.IdRef="Sequence_77" />
                     </If.Else>
                   </If>
-                  <If Condition="[CurrentRow.Item(&quot;SHOULD_POST_LINKEDIN&quot;).ToString = &quot;YES&quot;]" DisplayName="If - Post Linkedin" sap:VirtualizedContainerService.HintSize="410.4,183.2" sap2010:WorkflowViewState.IdRef="If_60">
+                  <If Condition="[CurrentRow.Item(&quot;SHOULD_POST_LINKEDIN&quot;).ToString = &quot;YES&quot;]" DisplayName="If - Post Linkedin" sap:VirtualizedContainerService.HintSize="410.4,52.8" sap2010:WorkflowViewState.IdRef="If_60">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="376,142.4" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                      <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="300,142.4" sap2010:WorkflowViewState.IdRef="Sequence_61">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\LinkedinUpdateProcess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="332.8,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_63" UnSafe="False" WorkflowFileName="PlatformWorkflows\LinkedinUpdateProcess.xaml">
-                          <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_AuthorizationToken">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Linkedin_AccessToken&quot;).ToString" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_LinkedinApiVersion">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Linkedin_ApiVersion&quot;).ToString" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_MediaPath">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="mediaPath" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_Text">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="description" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_LinkedinBaseUrl">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Linkedin_BaseUrl&quot;).ToString" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_LinkedinMediaEndpoint">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Linkedin_MediaUpload&quot;).ToString" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_OrgID">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Linkedin_OrgId&quot;).ToString" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_CurrentL_UpdateStatus">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="currentL_updateStatus" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:Int32" x:Key="in_Counter">
-                              <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="counter" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                              <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="config" />
-                            </InArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="out_LinkedinStatus">
-                              <VisualBasicReference x:TypeArguments="x:String" ExpressionText="linkedinStatus" />
-                            </OutArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_EmailAddress">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;SocialMediaUpdateExceptionMail&quot;).ToString" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_Entity">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Linkedin_Entity&quot;).ToString" />
-                            </InArgument>
-                          </ui:InvokeWorkflowFile.Arguments>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_79">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\LinkedinUpdateProcess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_63" UnSafe="False" WorkflowFileName="PlatformWorkflows\LinkedinUpdateProcess.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_AuthorizationToken">[config("Linkedin_AccessToken").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_LinkedinApiVersion">[config("Linkedin_ApiVersion").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_MediaPath">[mediaPath]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_Text">[description]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_LinkedinBaseUrl">[config("Linkedin_BaseUrl").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_LinkedinMediaEndpoint">[config("Linkedin_MediaUpload").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_OrgID">[config("Linkedin_OrgId").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_CurrentL_UpdateStatus">[currentL_updateStatus]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_Counter">[counter]</InArgument>
+                                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[config]</InArgument>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="out_LinkedinStatus">[linkedinStatus]</OutArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_EmailAddress">[config("SocialMediaUpdateExceptionMail").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_Entity">[config("Linkedin_Entity").ToString]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:InvokeWorkflowFile>
+                            </Sequence>
+                          </ui:CommentOut.Body>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                        </ui:InvokeWorkflowFile>
+                        </ui:CommentOut>
                       </Sequence>
                     </If.Then>
                     <If.Else>
                       <Sequence DisplayName="" sap2010:WorkflowViewState.IdRef="Sequence_47" />
                     </If.Else>
                   </If>
-                  <If Condition="[CurrentRow.Item(&quot;SHOULD_POST_TWITTER&quot;).ToString = &quot;YES&quot;]" DisplayName="If - Post Twitter" sap:VirtualizedContainerService.HintSize="410.4,183.2" sap2010:WorkflowViewState.IdRef="If_59">
+                  <If Condition="[CurrentRow.Item(&quot;SHOULD_POST_TWITTER&quot;).ToString = &quot;YES&quot;]" DisplayName="If - Post Twitter" sap:VirtualizedContainerService.HintSize="410.4,52.8" sap2010:WorkflowViewState.IdRef="If_59">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="362.4,142.4" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                      <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="300,142.4" sap2010:WorkflowViewState.IdRef="Sequence_72">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TwitterUpdate.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="319.2,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_64" UnSafe="False" WorkflowFileName="PlatformWorkflows\TwitterUpdate.xaml">
-                          <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_CurrentMediaPath">[currentMediaPath]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_Authorization">[config("Twitter_Auth").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_MediaPath">[mediaPath]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_ConsumerKey">[config("Twitter_ApiKey").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_ConsumerSecret">[config("Twitter_ApiSecret").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_AccessToken">[config("Twitter_AccessToken").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_AccessSecret">[config("Twitter_AccessSecret").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_PostApi">[twitterBaseUrl+config("Twitter_PostEndpoint").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_Text">[description]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="out_Response">[response]</InArgument>
-                            <InArgument x:TypeArguments="x:Int32" x:Key="out_StatusCode">[statusCode]</InArgument>
-                            <InArgument x:TypeArguments="x:Int32" x:Key="in_Counter">[counter]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_MediaApi">[config("Twitter_MediaApi").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[config("SocialMediaUpdateFilePath").ToString]</InArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="out_TwitterStatus">[twitterStatus]</OutArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_EmailAddress">[config("SocialMediaUpdateExceptionMail").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_CurrentStatus">[currentT_UpdateStatus]</InArgument>
-                          </ui:InvokeWorkflowFile.Arguments>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_83">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TwitterUpdate.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_66" UnSafe="False" WorkflowFileName="PlatformWorkflows\TwitterUpdate.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_CurrentMediaPath">[currentMediaPath]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_Authorization">[config("Twitter_Auth").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_MediaPath">[mediaPath]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_ConsumerKey">[config("Twitter_ApiKey").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_ConsumerSecret">[config("Twitter_ApiSecret").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_AccessToken">[config("Twitter_AccessToken").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_AccessSecret">[config("Twitter_AccessSecret").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_PostApi">[twitterBaseUrl+config("Twitter_PostEndpoint").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_Text">[description]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="out_Response">[response]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="out_StatusCode">[statusCode]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_Counter">[counter]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_MediaApi">[config("Twitter_MediaApi").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[config("SocialMediaUpdateFilePath").ToString]</InArgument>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="out_TwitterStatus">[twitterStatus]</OutArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_EmailAddress">[config("SocialMediaUpdateExceptionMail").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_CurrentStatus">[currentT_UpdateStatus]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:InvokeWorkflowFile>
+                            </Sequence>
+                          </ui:CommentOut.Body>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                        </ui:InvokeWorkflowFile>
+                        </ui:CommentOut>
                       </Sequence>
                     </If.Then>
                     <If.Else>
                       <Sequence DisplayName="" sap2010:WorkflowViewState.IdRef="Sequence_73" />
                     </If.Else>
                   </If>
-                  <If sap2010:Annotation.AnnotationText="This activity is used to post on flickr if it was directed to post " Condition="[CurrentRow.Item(&quot;SHOULD_POST_FLICKR&quot;).ToString = &quot;YES&quot;]" DisplayName="If - Post Flickr" sap:VirtualizedContainerService.HintSize="410.4,417.6" sap2010:WorkflowViewState.IdRef="If_58">
+                  <If sap2010:Annotation.AnnotationText="This activity is used to post on flickr if it was directed to post " Condition="[CurrentRow.Item(&quot;SHOULD_POST_FLICKR&quot;).ToString = &quot;YES&quot;]" DisplayName="If - Post Flickr" sap:VirtualizedContainerService.HintSize="410.4,227.2" sap2010:WorkflowViewState.IdRef="If_58">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -519,35 +534,129 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="376.8,203.2" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                      <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="300,142.4" sap2010:WorkflowViewState.IdRef="Sequence_69">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\FlickrUpdateProcess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_61" UnSafe="False" WorkflowFileName="PlatformWorkflows\FlickrUpdateProcess.xaml">
-                          <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_EmailAddress">[config("SocialMediaUpdateExceptionMail").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_MediaPath">[mediaPath]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_PostUrl">[config("Flickr_PostUrl").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_ApiKey">[config("Flickr_apiKey").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_ApiSecret">[config("Flickr_apiSecret").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_Authorization">[config("Flickr_OAuth").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="out_Response">[response]</InArgument>
-                            <InArgument x:TypeArguments="x:Int32" x:Key="out_StatusCode">[statusCode]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_OAuthToken">[config("Flickr_OAuthToken").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_OAuthSecret">[config("Flickr_OAuthSecret").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="out_FlickrStatus">[flickrStatus]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_CurrentStatus">[currentFl_updateStatus]</InArgument>
-                          </ui:InvokeWorkflowFile.Arguments>
-                        </ui:InvokeWorkflowFile>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_82">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\FlickrUpdateProcess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_67" UnSafe="False" WorkflowFileName="PlatformWorkflows\FlickrUpdateProcess.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_EmailAddress">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;SocialMediaUpdateExceptionMail&quot;).ToString" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_MediaPath">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="mediaPath" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_PostUrl">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Flickr_PostUrl&quot;).ToString" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_ApiKey">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Flickr_apiKey&quot;).ToString" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_ApiSecret">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Flickr_apiSecret&quot;).ToString" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_Authorization">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Flickr_OAuth&quot;).ToString" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="out_Response">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="response" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="out_StatusCode">
+                                    <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="statusCode" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_OAuthToken">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Flickr_OAuthToken&quot;).ToString" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_OAuthSecret">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Flickr_OAuthSecret&quot;).ToString" />
+                                  </InArgument>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="out_FlickrStatus">
+                                    <VisualBasicReference x:TypeArguments="x:String" ExpressionText="flickrStatus" />
+                                  </OutArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_CurrentStatus">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="currentFl_updateStatus" />
+                                  </InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
                       </Sequence>
                     </If.Then>
                     <If.Else>
                       <Sequence DisplayName="" sap2010:WorkflowViewState.IdRef="Sequence_70" />
                     </If.Else>
                   </If>
-                  <If Condition="[facebookStatus &lt;&gt; &quot;&quot; or linkedinStatus &lt;&gt; &quot;&quot; or twitterStatus &lt;&gt; &quot;&quot; or flickrStatus &lt;&gt; &quot;&quot;]" DisplayName="If - Status isNotEmpty" sap:VirtualizedContainerService.HintSize="410.4,388.8" sap2010:WorkflowViewState.IdRef="If_46">
+                  <If sap2010:Annotation.AnnotationText="This activity is used to post on Wp if it was directed to post " Condition="[CurrentRow.Item(&quot;SHOULD_POST_WP&quot;).ToString = &quot;YES&quot;]" DisplayName="If - WordPress" sap:VirtualizedContainerService.HintSize="410.4,417.6" sap2010:WorkflowViewState.IdRef="If_62">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="376.8,203.2" sap2010:WorkflowViewState.IdRef="Sequence_80">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\WordpressUpdateProcess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_68" UnSafe="False" WorkflowFileName="PlatformWorkflows\WordpressUpdateProcess.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_site">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;WP_SiteUrl&quot;).ToString" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_content">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="description" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_title">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="title" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_username">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;WP_Username&quot;).ToString" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_password">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;WP_Password&quot;).ToString" />
+                            </InArgument>
+                            <OutArgument x:TypeArguments="x:Int32" x:Key="out_StatusCode">
+                              <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="statusCode" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_WPStatus">
+                              <VisualBasicReference x:TypeArguments="x:String" ExpressionText="wpStatus" />
+                            </OutArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:InvokeWorkflowFile>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="" sap2010:WorkflowViewState.IdRef="Sequence_81" />
+                    </If.Else>
+                  </If>
+                  <If Condition="[facebookStatus &lt;&gt; &quot;&quot; or linkedinStatus &lt;&gt; &quot;&quot; or twitterStatus &lt;&gt; &quot;&quot; or flickrStatus &lt;&gt; &quot;&quot; or  wpStatus &lt;&gt; &quot;&quot;]" DisplayName="If - Status isNotEmpty" sap:VirtualizedContainerService.HintSize="410.4,325.6" sap2010:WorkflowViewState.IdRef="If_46">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -555,17 +664,17 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376.8,205.6" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                      <Sequence sap:VirtualizedContainerService.HintSize="300,142.4" sap2010:WorkflowViewState.IdRef="Sequence_48">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:WriteCell Cell="[&quot;E&quot;+ (counter+1).ToString]" DisplayName="Update Status" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_39" SheetName="Sheet1" Text="[facebookStatus + &quot; : &quot; + linkedinStatus + &quot; : &quot; + twitterStatus + &quot;:&quot; + flickrStatus]" WorkbookPath="[updateFilePath]">
+                        <ui:WriteCell Cell="[&quot;E&quot;+ (counter+1).ToString]" DisplayName="Update Status" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="WriteCell_39" SheetName="Sheet1" Text="[facebookStatus + &quot; : &quot; + linkedinStatus + &quot; : &quot; + twitterStatus + &quot;:&quot; + flickrStatus +&quot;:&quot; + wpStatus]" WorkbookPath="[updateFilePath]">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:WriteCell>

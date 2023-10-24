@@ -9,7 +9,7 @@
     "UiPath.System.Activities": "[23.6.0-preview]",
     "UiPath.Testing.Activities": "[23.6.0-preview]",
     "UiPath.UIAutomation.Activities": "[23.6.1-preview]",
-    "UiPath.WebAPI.Activities": "[1.16.2]"
+    "UiPath.WebAPI.Activities": "[1.18.0]"
   },
   "webServices": [],
   "entitiesStores": [],
