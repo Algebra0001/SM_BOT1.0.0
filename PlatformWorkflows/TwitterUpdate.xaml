@@ -51,7 +51,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1010.4000000000001,4204.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>850.4,1172.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TwitterUpdate_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -171,7 +171,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TwitterUpdate" sap:VirtualizedContainerService.HintSize="1020.8,4140" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TwitterUpdate" sap:VirtualizedContainerService.HintSize="572.8,1108" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="resp" />
       <Variable x:TypeArguments="x:String" Name="textbody" />
@@ -182,7 +182,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="958.4,4028" sap2010:WorkflowViewState.IdRef="TryCatch_17">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="510.4,996" sap2010:WorkflowViewState.IdRef="TryCatch_17">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -190,7 +190,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="TwitterUpdate" sap:VirtualizedContainerService.HintSize="921.6,3796.8" sap2010:WorkflowViewState.IdRef="Sequence_99">
+        <Sequence DisplayName="TwitterUpdate" sap:VirtualizedContainerService.HintSize="473.6,764.8" sap2010:WorkflowViewState.IdRef="Sequence_99">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="twitterStatus" />
           </Sequence.Variables>
@@ -200,7 +200,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="859.2,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Started Twitter Posting&quot;]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="411.2,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Started Twitter Posting&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -208,7 +208,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <If sap2010:Annotation.AnnotationText="This condition checks the input file and confirms the presence of the media path i.e. if the media file is present or not" Condition="[in_CurrentMediaPath &lt;&gt; &quot;&quot;]" DisplayName="If - Media Presence" sap:VirtualizedContainerService.HintSize="859.2,3592" sap2010:WorkflowViewState.IdRef="If_35">
+          <If sap2010:Annotation.AnnotationText="This condition checks the input file and confirms the presence of the media path i.e. if the media file is present or not" Condition="[in_CurrentMediaPath &lt;&gt; &quot;&quot;]" DisplayName="If - Media Presence" sap:VirtualizedContainerService.HintSize="411.2,560" sap2010:WorkflowViewState.IdRef="If_35">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -217,13 +217,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="825.6,2576.8" sap2010:WorkflowViewState.IdRef="Sequence_89">
+              <Sequence sap:VirtualizedContainerService.HintSize="377.6,332.8" sap2010:WorkflowViewState.IdRef="Sequence_89">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If sap2010:Annotation.AnnotationText="This condition is to make sure that a post was not repeated and hence reduces the effect of calling the API endpoint multiple times." Condition="[Not in_CurrentStatus.Contains(&quot;T- Posted&quot;)]" DisplayName="If - Has Posted(Media)" sap:VirtualizedContainerService.HintSize="782.4,2487.2" sap2010:WorkflowViewState.IdRef="If_31">
+                <If sap2010:Annotation.AnnotationText="This condition is to make sure that a post was not repeated and hence reduces the effect of calling the API endpoint multiple times." Condition="[Not in_CurrentStatus.Contains(&quot;T - Posted&quot;)]" DisplayName="If - Has Posted(Media)" sap:VirtualizedContainerService.HintSize="334.4,243.2" sap2010:WorkflowViewState.IdRef="If_31">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -232,7 +232,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="748.8,2272.8" sap2010:WorkflowViewState.IdRef="Sequence_80">
+                    <Sequence sap:VirtualizedContainerService.HintSize="492.8,216.8" sap2010:WorkflowViewState.IdRef="Sequence_80">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="body" />
                         <Variable x:TypeArguments="x:String" Name="test" />
@@ -245,7 +245,7 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence sap2010:Annotation.AnnotationText="This workflow deals with getting media ids and posting it with or without text/description." DisplayName="PostMedia&amp;Text" sap:VirtualizedContainerService.HintSize="705.6,1901.6" sap2010:WorkflowViewState.IdRef="Sequence_81">
+                      <Sequence sap2010:Annotation.AnnotationText="This workflow deals with getting media ids and posting it with or without text/description." DisplayName="PostMedia&amp;Text" sap:VirtualizedContainerService.HintSize="449.6,127.2" sap2010:WorkflowViewState.IdRef="Sequence_81">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="njl:JObject" Name="respObj" />
                           <Variable x:TypeArguments="s:String[]" Name="mediaArray" />
@@ -256,12 +256,12 @@
                         </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign DisplayName="Assign - mediaArr" sap:VirtualizedContainerService.HintSize="643.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_32">
+                        <Assign DisplayName="Assign - mediaArr" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_32">
                           <Assign.To>
                             <OutArgument x:TypeArguments="s:String[]">[mediaArray]</OutArgument>
                           </Assign.To>
@@ -269,7 +269,7 @@
                             <InArgument x:TypeArguments="s:String[]">[in_MediaPath.Split(";")]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign DisplayName="Declare myIds" sap:VirtualizedContainerService.HintSize="643.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_34">
+                        <Assign DisplayName="Declare myIds" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_34">
                           <Assign.To>
                             <OutArgument x:TypeArguments="scg:List(x:String)">[myIds]</OutArgument>
                           </Assign.To>
@@ -277,16 +277,16 @@
                             <InArgument x:TypeArguments="scg:List(x:String)">[New List(of String)]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <If sap2010:Annotation.AnnotationText="This condition is to ensure that media file is one or more in the input file" Condition="[mediaArray.Length &gt;= 1]" DisplayName="If - Confirm Media" sap:VirtualizedContainerService.HintSize="643.2,1515.2" sap2010:WorkflowViewState.IdRef="If_37">
+                        <If sap2010:Annotation.AnnotationText="This condition is to ensure that media file is one or more in the input file" Condition="[mediaArray.Length &gt;= 1]" DisplayName="If - Confirm Media" sap:VirtualizedContainerService.HintSize="433.6,112.8" sap2010:WorkflowViewState.IdRef="If_37">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="609.6,1300.8" sap2010:WorkflowViewState.IdRef="Sequence_110">
+                            <Sequence sap:VirtualizedContainerService.HintSize="476.8,708" sap2010:WorkflowViewState.IdRef="Sequence_110">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="bodyVar" />
                               </Sequence.Variables>
@@ -295,13 +295,13 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="566.4,738.4" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[mediaArray]">
+                              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - media path" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[mediaArray]">
                                 <ui:ForEach.Body>
                                   <ActivityAction x:TypeArguments="x:String">
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
                                     </ActivityAction.Argument>
-                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="532.8,550.4" sap2010:WorkflowViewState.IdRef="Sequence_114">
+                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="300,142.4" sap2010:WorkflowViewState.IdRef="Sequence_114">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:String" Name="mediaIds" />
                                       </Sequence.Variables>
@@ -310,18 +310,18 @@
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <TryCatch DisplayName="Try Catch - Image Ids" sap:VirtualizedContainerService.HintSize="489.6,460.8" sap2010:WorkflowViewState.IdRef="TryCatch_14">
+                                      <TryCatch DisplayName="Try Catch - Image Ids" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_14">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <TryCatch.Try>
-                                          <Sequence sap2010:Annotation.AnnotationText="This sequence is to get media id(s) and store in the myIds collection" sap:VirtualizedContainerService.HintSize="496,528.8" sap2010:WorkflowViewState.IdRef="Sequence_124">
+                                          <Sequence sap2010:Annotation.AnnotationText="This sequence is to get media id(s) and store in the myIds collection" sap:VirtualizedContainerService.HintSize="449.6,114.4" sap2010:WorkflowViewState.IdRef="Sequence_124">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                               </scg:Dictionary>
@@ -352,7 +352,7 @@
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                             </ui:DeserializeJson>
-                                            <Assign DisplayName="Get Media_id" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_49">
+                                            <Assign DisplayName="Get media_id" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_49">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:String">[mediaIds]</OutArgument>
                                               </Assign.To>
@@ -376,10 +376,10 @@
                                           </Sequence>
                                         </TryCatch.Try>
                                         <TryCatch.Catches>
-                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="456,296" sap2010:WorkflowViewState.IdRef="Catch`1_13">
+                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="452.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_13">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
@@ -387,10 +387,10 @@
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                               </ActivityAction.Argument>
-                                              <Sequence sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_129">
+                                              <Sequence sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_129">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
@@ -423,12 +423,12 @@
                                 </ui:ForEach.Body>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:ForEach>
-                              <Assign DisplayName="Assign - myIds To myIdsArr" sap:VirtualizedContainerService.HintSize="566.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_45">
+                              <Assign DisplayName="Assign - myIds To myIdsArr" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_45">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="s:String[]">[myIdsArr]</OutArgument>
                                 </Assign.To>
@@ -436,7 +436,7 @@
                                   <InArgument x:TypeArguments="s:String[]">[myIds.ToArray]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:ReadTextFile File="{x:Null}" sap2010:Annotation.AnnotationText="To read the request file for post endpoint" Content="[body]" DisplayName="Read Text File" FileName="Data\Input\MediaId.json" sap:VirtualizedContainerService.HintSize="566.4,96.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_18">
+                              <ui:ReadTextFile File="{x:Null}" sap2010:Annotation.AnnotationText="To read the request file for post endpoint" Content="[body]" DisplayName="Read Text File" FileName="Data\Input\MediaId.json" sap:VirtualizedContainerService.HintSize="433.6,96.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_18">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -450,7 +450,7 @@
                                   <OutArgument x:TypeArguments="x:String">[body]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">[body.Replace("""in_MediaID""", string.Join(",",myIdsArr)).Replace("in_Text", in_Text)]</InArgument>
+                                  <InArgument x:TypeArguments="x:String">[body.Replace("in_Text", in_Text).Replace("""in_MediaID""", string.Join(",",myIdsArr))]</InArgument>
                                 </Assign.Value>
                               </Assign>
                               <TryCatch DisplayName="Try Catch - Post Media, optional text" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_15">
@@ -511,84 +511,61 @@
                                   </Catch>
                                 </TryCatch.Catches>
                               </TryCatch>
+                              <If Condition="[out_StatusCode = 200 or out_StatusCode = 201]" DisplayName="If - Update Status" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="If_43">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_140">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Assign - Update Status" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_53">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[out_TwitterStatus]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">T - Posted</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_141">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_111">
+                            <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_111">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="Assign - Update Status" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_54">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[out_TwitterStatus]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">T - Not Posted</InArgument>
+                                </Assign.Value>
+                              </Assign>
                             </Sequence>
                           </If.Else>
                         </If>
                       </Sequence>
-                      <ui:Comment sap:VirtualizedContainerService.HintSize="572.8,56" sap2010:WorkflowViewState.IdRef="Comment_2" Text="Come back to this workflow" />
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="572.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_6">
-                        <ui:CommentOut.Body>
-                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,256.8" sap2010:WorkflowViewState.IdRef="Sequence_145">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="This workflow is to update the status column" DisplayName="PlatformWorkflows\UpdateStatusSubProcess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,144.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="PlatformWorkflows\UpdateStatusSubProcess.xaml">
-                              <ui:InvokeWorkflowFile.Arguments>
-                                <InOutArgument x:TypeArguments="x:Int32" x:Key="io_StatusCode">[out_StatusCode]</InOutArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="out_TwitterStatus">[out_TwitterStatus]</InArgument>
-                              </ui:InvokeWorkflowFile.Arguments>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:InvokeWorkflowFile>
-                          </Sequence>
-                        </ui:CommentOut.Body>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:CommentOut>
-                      <If Condition="[out_StatusCode = 200 or out_StatusCode = 201]" DisplayName="If - Update Status" sap:VirtualizedContainerService.HintSize="572.8,52.8" sap2010:WorkflowViewState.IdRef="If_43">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_140">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <Assign DisplayName="Assign - Update Status" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_53">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:String">[out_TwitterStatus]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:String">T- Posted</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                          </Sequence>
-                        </If.Then>
-                        <If.Else>
-                          <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_141">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </Sequence>
-                        </If.Else>
-                      </If>
                     </Sequence>
                   </If.Then>
                   <If.Else>
@@ -598,7 +575,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;This status was posted earlier&quot;]">
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;This content was posted earlier&quot;]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -612,23 +589,22 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="377.6,800.8" sap2010:WorkflowViewState.IdRef="Sequence_98">
+              <Sequence sap:VirtualizedContainerService.HintSize="300,234.4" sap2010:WorkflowViewState.IdRef="Sequence_98">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:Comment sap:VirtualizedContainerService.HintSize="334.4,56" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// come back to this activity" />
-                <If sap2010:Annotation.AnnotationText="This condition ensures that the text post is not repeated, reducing the effect of calling the API endpoint multiple times." Condition="[Not in_CurrentStatus.Contains(&quot;T-Posted&quot;)]" DisplayName="If - Has Posted" sap:VirtualizedContainerService.HintSize="334.4,522.4" sap2010:WorkflowViewState.IdRef="If_34">
+                <If sap2010:Annotation.AnnotationText="This condition ensures that the text post is not repeated, reducing the effect of calling the API endpoint multiple times." Condition="[Not in_CurrentStatus.Contains(&quot;T - Posted&quot;)]" DisplayName="If - Has Posted" sap:VirtualizedContainerService.HintSize="256.8,144.8" sap2010:WorkflowViewState.IdRef="If_34">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="300,279.2" sap2010:WorkflowViewState.IdRef="Sequence_83">
+                    <Sequence sap:VirtualizedContainerService.HintSize="300,372" sap2010:WorkflowViewState.IdRef="Sequence_83">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="njl:JObject" Name="jObject" />
                       </Sequence.Variables>
@@ -691,10 +667,10 @@
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                               </ActivityAction.Argument>
-                              <Sequence sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_133">
+                              <Sequence sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_133">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
@@ -710,6 +686,40 @@
                           </Catch>
                         </TryCatch.Catches>
                       </TryCatch>
+                      <If Condition="[out_StatusCode = 200 or out_StatusCode = 201]" DisplayName="If - Update Status" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="If_40">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_138">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign DisplayName="Assign - Update Status" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_52">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[out_TwitterStatus]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">T - Posted</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_139">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </If.Else>
+                      </If>
                     </Sequence>
                   </If.Then>
                   <If.Else>
@@ -730,47 +740,13 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <If Condition="[out_StatusCode = 200 or out_StatusCode = 201]" DisplayName="If - Update Status" sap:VirtualizedContainerService.HintSize="334.4,52.8" sap2010:WorkflowViewState.IdRef="If_40">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_138">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Assign - Update Status" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_52">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[out_TwitterStatus]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">T- Posted</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                    </Sequence>
-                  </If.Then>
-                  <If.Else>
-                    <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_139">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </Sequence>
-                  </If.Else>
-                </If>
               </Sequence>
             </If.Else>
           </If>
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="792,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="476.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
