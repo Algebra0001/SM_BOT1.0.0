@@ -1,15 +1,19 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="VB" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="VB" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_endpoint" Type="InArgument(x:String)" />
     <x:Property Name="in_Auth" Type="InArgument(x:String)" />
     <x:Property Name="in_Preset" Type="InArgument(x:String)" />
     <x:Property Name="in_FileInput" Type="InArgument(x:String)" />
     <x:Property Name="out_SuccessResponse" Type="OutArgument(x:String)" />
+    <x:Property Name="in_EmailAddress" Type="InArgument(x:String)" />
   </x:Members>
+  <this:VB.in_EmailAddress>
+    <InArgument x:TypeArguments="x:String" />
+  </this:VB.in_EmailAddress>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>908,925.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>908,1108</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>VB_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -47,15 +51,22 @@
       <x:String>System.Net.Http.Headers</x:String>
       <x:String>Newtonsoft.Json.Linq</x:String>
       <x:String>System.Text</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
     <sco:Collection x:TypeArguments="AssemblyReference">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
@@ -64,46 +75,40 @@
       <AssemblyReference>System.Drawing.Common</AssemblyReference>
       <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
       <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Http</AssemblyReference>
+      <AssemblyReference>System.Net.Http.WinHttpHandler</AssemblyReference>
       <AssemblyReference>System.Net.Mail</AssemblyReference>
       <AssemblyReference>System.ObjectModel</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Text.Encoding.CodePages</AssemblyReference>
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
-      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
-      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
-      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
-      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
-      <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Memory.Data</AssemblyReference>
-      <AssemblyReference>UiPath.Python</AssemblyReference>
-      <AssemblyReference>System.Console</AssemblyReference>
-      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
-      <AssemblyReference>System.Security.Permissions</AssemblyReference>
-      <AssemblyReference>System.ComponentModel</AssemblyReference>
-      <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Web</AssemblyReference>
-      <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
-      <AssemblyReference>System.Net.Http.WinHttpHandler</AssemblyReference>
-      <AssemblyReference>System.Net.Http</AssemblyReference>
-      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
-      <AssemblyReference>System.Text.Encoding.CodePages</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="918.4,860.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence sap:VirtualizedContainerService.HintSize="918.4,1043.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -146,7 +151,7 @@
               <av:PointCollection x:Key="ConnectorLocation">430,116.39999999999999 430,146.39999999999998 400,146.39999999999998 400,156.4</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim videoSizeBytes As Long = New FileInfo(in_path).Length&#xD;&#xA;Dim videoSizeMegabytes As Double = videoSizeBytes / (1024.0 * 1024.0)&#xD;&#xA;&#xD;&#xA;If videoSizeMegabytes &gt; 100 Then&#xD;&#xA;&#x9;Console.WriteLine(&quot;The video size is greater than 100 MB.&quot;)&#xD;&#xA;&#x9;out_result = False&#xD;&#xA;Else&#xD;&#xA;&#x9;Console.WriteLine(&quot;The video size is 100 MB or smaller.&quot;)&#xD;&#xA;&#x9;out_result = True&#xD;&#xA;End If&#xD;&#xA;" DisplayName="Check Video Size" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim videoSizeBytes As Long = New FileInfo(in_path).Length&#xA;Dim videoSizeMegabytes As Double = videoSizeBytes / (1024.0 * 1024.0)&#xA;&#xA;If videoSizeMegabytes &gt; 100 Then&#xA;&#x9;Console.WriteLine(&quot;The video size is greater than 100 MB.&quot;)&#xA;&#x9;out_result = False&#xA;Else&#xA;&#x9;Console.WriteLine(&quot;The video size is 100 MB or smaller.&quot;)&#xA;&#x9;out_result = True&#xA;End If&#xA;" DisplayName="Check Video Size" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
             <ui:InvokeCode.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_path">[in_FileInput]</InArgument>
               <OutArgument x:TypeArguments="x:Boolean" x:Key="out_result">[result]</OutArgument>
@@ -184,16 +189,13 @@
                     </ui:InvokeCode.Arguments>
                   </ui:InvokeCode>
                   <FlowStep.Next>
-                    <FlowDecision x:Name="__ReferenceID2" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
-                      <FlowDecision.Condition>
-                        <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="time &gt; 0" />
-                      </FlowDecision.Condition>
+                    <FlowDecision x:Name="__ReferenceID2" Condition="[time &gt; 0]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <av:Point x:Key="ShapeLocation">70.4,246.39999999999998</av:Point>
                           <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
-                          <av:PointCollection x:Key="TrueConnector">70.4,290 42,290 42,344.4 102,344.4 102,374.4</av:PointCollection>
+                          <av:PointCollection x:Key="TrueConnector">70.4,290 40.40000000000002,290 40.40000000000002,344.4 100,344.4 100,374.4</av:PointCollection>
                           <av:PointCollection x:Key="FalseConnector">149.60000000000002,290 179.6,290 179.6,300 180,300</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -202,28 +204,68 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">0,374.4</av:Point>
-                              <av:Size x:Key="ShapeSize">204,71.2</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">102,445.59999999999997 102,475.59999999999997 300,475.59999999999997 300,496.4</av:PointCollection>
+                              <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">100,427.2 100,457.2 300,457.2 300,496.4</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" BodyFormat="application/xml" DisplayName="Http client" EnableSSLVerification="True" EndPoint="https://api.cloudinary.com/v1_1/drajywgee/video/upload" sap:VirtualizedContainerService.HintSize="204,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_3" Method="POST" Result="[out_SuccessResponse]" StatusCode="[status_code]" TimeoutMS="600000">
-                            <ui:HttpClient.Attachments>
-                              <InArgument x:TypeArguments="x:String" x:Key="file">[in_FileInput]</InArgument>
-                            </ui:HttpClient.Attachments>
-                            <ui:HttpClient.Cookies>
-                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                            </ui:HttpClient.Cookies>
-                            <ui:HttpClient.Headers>
-                              <InArgument x:TypeArguments="x:String" x:Key="Content-Type">multipart/form-data</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="Authorization">[in_Auth]</InArgument>
-                            </ui:HttpClient.Headers>
-                            <ui:HttpClient.Parameters>
-                              <InArgument x:TypeArguments="x:String" x:Key="upload_preset">[in_Preset]</InArgument>
-                            </ui:HttpClient.Parameters>
-                            <ui:HttpClient.UrlSegments>
-                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                            </ui:HttpClient.UrlSegments>
-                          </ui:HttpClient>
+                          <TryCatch sap:VirtualizedContainerService.HintSize="489.6,460.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                            <TryCatch.Try>
+                              <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" BodyFormat="application/xml" DisplayName="Http client" EnableSSLVerification="True" EndPoint="https://api.cloudinary.com/v1_1/drajywgee/video/upload" sap:VirtualizedContainerService.HintSize="204,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_3" Method="POST" Result="[out_SuccessResponse]" StatusCode="[status_code]" TimeoutMS="600000">
+                                <ui:HttpClient.Attachments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="file">[in_FileInput]</InArgument>
+                                </ui:HttpClient.Attachments>
+                                <ui:HttpClient.Cookies>
+                                  <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                </ui:HttpClient.Cookies>
+                                <ui:HttpClient.Headers>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Content-Type">multipart/form-data</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Authorization">[in_Auth]</InArgument>
+                                </ui:HttpClient.Headers>
+                                <ui:HttpClient.Parameters>
+                                  <InArgument x:TypeArguments="x:String" x:Key="upload_preset">[in_Preset]</InArgument>
+                                </ui:HttpClient.Parameters>
+                                <ui:HttpClient.UrlSegments>
+                                  <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                </ui:HttpClient.UrlSegments>
+                              </ui:HttpClient>
+                            </TryCatch.Try>
+                            <TryCatch.Catches>
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="456,296" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ActivityAction x:TypeArguments="s:Exception">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                  </ActivityAction.Argument>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\SendEmailException.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PlatformWorkflows\SendEmailException.xaml">
+                                      <ui:InvokeWorkflowFile.Arguments>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_To">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailAddress" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
+                                          <Literal x:TypeArguments="x:String">Twitter Automation Post text/Media Exception</Literal>
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_Body">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="exception.Message" />
+                                        </InArgument>
+                                      </ui:InvokeWorkflowFile.Arguments>
+                                    </ui:InvokeWorkflowFile>
+                                  </Sequence>
+                                </ActivityAction>
+                              </Catch>
+                            </TryCatch.Catches>
+                          </TryCatch>
                           <FlowStep.Next>
                             <FlowDecision x:Name="__ReferenceID6" Condition="[status_code = 200]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                               <sap:WorkflowViewStateService.ViewState>

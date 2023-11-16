@@ -17,7 +17,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>850.4,7431.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>797.6,5086.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InstagramUpdateProcess_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -125,7 +125,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="InstagramUpdateProcess" sap:VirtualizedContainerService.HintSize="726.4,7366.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="InstagramUpdateProcess" sap:VirtualizedContainerService.HintSize="726.4,5021.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="inPhotoPath" />
       <Variable x:TypeArguments="x:String" Name="inDescription" />
@@ -294,7 +294,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <If Condition="[photoArr.Length &gt; 1]" sap:VirtualizedContainerService.HintSize="664,7008.8" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[photoArr.Length &gt; 1]" sap:VirtualizedContainerService.HintSize="664,4664" sap2010:WorkflowViewState.IdRef="If_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -302,7 +302,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="630.4,4700" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap:VirtualizedContainerService.HintSize="630.4,4480.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="multiIds" />
             <Variable x:TypeArguments="x:Int32" Name="counter" />
@@ -318,13 +318,13 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[counter]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="587.2,3304" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[photoArr]">
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[counter]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="587.2,3122.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[photoArr]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="x:String">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553.6,3116" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553.6,2934.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="carouselContent" />
                     <Variable x:TypeArguments="x:Int32" Name="carouselStatus" />
@@ -334,7 +334,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[Path.GetExtension(currentItem).ToLower= &quot;.mp4&quot;]" sap:VirtualizedContainerService.HintSize="510.4,3026.4" sap2010:WorkflowViewState.IdRef="If_6">
+                  <If Condition="[Path.GetExtension(currentItem).ToLower= &quot;.mp4&quot;]" sap:VirtualizedContainerService.HintSize="510.4,2844.8" sap2010:WorkflowViewState.IdRef="If_6">
                     <If.Then>
                       <Sequence sap:VirtualizedContainerService.HintSize="476.8,1478.4" sap2010:WorkflowViewState.IdRef="Sequence_19">
                         <sap:WorkflowViewStateService.ViewState>
@@ -344,11 +344,24 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\cloudinaryPost.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="PlatformWorkflows\cloudinaryPost.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_endpoint">[cloudinaryVideoEndpoint]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_Auth">["Basic base64Encoded(" + in_ApiKey + ":" + in_ApiSecret + ")"]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_Preset">[in_UploadPreset]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_FileInput">[currentItem]</InArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="out_SuccessResponse">[cloudinaryContent]</OutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_endpoint">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="cloudinaryVideoEndpoint" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_Auth">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Basic base64Encoded(&quot; + in_ApiKey + &quot;:&quot; + in_ApiSecret + &quot;)&quot;" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_Preset">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_UploadPreset" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_FileInput">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="currentItem" />
+                            </InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_SuccessResponse">
+                              <VisualBasicReference x:TypeArguments="x:String" ExpressionText="cloudinaryContent" />
+                            </OutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_EmailAddress">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailAddress" />
+                            </InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[cloudinaryContent]" />
@@ -389,7 +402,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:HttpClient>
-                        <Delay Duration="00:00:45" sap:VirtualizedContainerService.HintSize="433.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                        <Delay Duration="00:00:45" sap:VirtualizedContainerService.HintSize="433.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_6" />
                         <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_11" JsonObject="[jContainerObject]" JsonString="[containerContent]" />
                         <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_13">
                           <Assign.To>
@@ -409,7 +422,7 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="476.8,1364.8" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                      <Sequence sap:VirtualizedContainerService.HintSize="476.8,1183.2" sap2010:WorkflowViewState.IdRef="Sequence_20">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -440,10 +453,9 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:HttpClient>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[cloudinaryContent]" />
                         <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_3" JsonObject="[jObject]" JsonString="[cloudinaryContent]" />
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[jObject(&quot;url&quot;).ToString()]" />
-                        <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_3">
+                        <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[imgUrl]</OutArgument>
                           </Assign.To>
@@ -542,7 +554,24 @@
               <InArgument x:TypeArguments="x:String">[jCarouselContainerId("id").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <Delay Duration="00:02:45" sap:VirtualizedContainerService.HintSize="587.2,90.4" sap2010:WorkflowViewState.IdRef="Delay_5" />
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="587.2,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,202.4" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Delay Duration="00:02:45" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="Delay_5" />
+              </Sequence>
+            </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CommentOut>
           <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" sap2010:Annotation.AnnotationText="Upload carousel container Id generated from previous HTTP request which posts the images to the instagram" AuthenticationType="None" BodyFormat="application/xml" DisplayName="HTTP Request - Upload carousel container Id" EnableSSLVerification="True" EndPoint="[uploadUrl]" sap:VirtualizedContainerService.HintSize="587.2,147.2" sap2010:WorkflowViewState.IdRef="HttpClient_12" Method="POST" OAuth2Token="[in_AccessToken]" Result="[carouselFinalUploadContent]" StatusCode="[carouselFinalUploadStatus]" TimeoutMS="180000">
             <ui:HttpClient.Attachments>
               <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
@@ -570,13 +599,13 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="553.6,2125.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence sap:VirtualizedContainerService.HintSize="300,142.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[fileExtension.ToLower = &quot;.mp4&quot;]" sap:VirtualizedContainerService.HintSize="510.4,2036" sap2010:WorkflowViewState.IdRef="If_5">
+          <If Condition="[fileExtension.ToLower = &quot;.mp4&quot;]" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="If_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -584,7 +613,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="476.8,1852.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence sap:VirtualizedContainerService.HintSize="476.79999999999995,1906.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="videoUrl" />
                 </Sequence.Variables>
@@ -595,11 +624,24 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\cloudinaryPost.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PlatformWorkflows\cloudinaryPost.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_endpoint">[cloudinaryVideoEndpoint]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Auth">["Basic base64Encoded(" + in_ApiKey + ":" + in_ApiSecret + ")"]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Preset">[in_UploadPreset]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_FileInput">[inPhotoPath]</InArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="out_SuccessResponse">[cloudinaryResp]</OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_endpoint">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="cloudinaryVideoEndpoint" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Auth">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Basic base64Encoded(&quot; + in_ApiKey + &quot;:&quot; + in_ApiSecret + &quot;)&quot;" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Preset">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_UploadPreset" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_FileInput">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="inPhotoPath" />
+                    </InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_SuccessResponse">
+                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="cloudinaryResp" />
+                    </OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_EmailAddress">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailAddress" />
+                    </InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Cloudinary endpoint successfully accessed&quot;]" />
@@ -607,7 +649,7 @@
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[cloudinaryResp]" />
                 <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_8" JsonObject="[jObject]" JsonString="[cloudinaryResp]" />
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[jObject(&quot;url&quot;).ToString()]" />
-                <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_10">
+                <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_10">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[videoUrl]</OutArgument>
                   </Assign.To>
@@ -641,9 +683,24 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:HttpClient>
-                <Delay Duration="00:00:45" sap:VirtualizedContainerService.HintSize="433.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                <Delay Duration="00:01:00" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="Delay_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Delay>
                 <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_9" JsonObject="[jContainerObject]" JsonString="[containerContent]" />
-                <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_11">
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="MessageBox_16" Text="[containerContent]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:MessageBox>
+                <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_11">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[containerId]</OutArgument>
                   </Assign.To>
