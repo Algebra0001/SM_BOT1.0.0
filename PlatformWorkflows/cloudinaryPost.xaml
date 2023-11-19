@@ -141,9 +141,9 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <Flowchart.StartNode>
-          <x:Reference>__ReferenceID8</x:Reference>
+          <x:Reference>__ReferenceID7</x:Reference>
         </Flowchart.StartNode>
-        <FlowStep x:Name="__ReferenceID8">
+        <FlowStep x:Name="__ReferenceID7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">330,63.599999999999994</av:Point>
@@ -196,7 +196,6 @@
                           <av:Point x:Key="ShapeLocation">70.4,246.39999999999998</av:Point>
                           <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
                           <av:PointCollection x:Key="TrueConnector">70.4,290 40.40000000000002,290 40.40000000000002,344.4 100,344.4 100,374.4</av:PointCollection>
-                          <av:PointCollection x:Key="FalseConnector">149.60000000000002,290 179.6,290 179.6,300 180,300</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <FlowDecision.True>
@@ -208,7 +207,7 @@
                               <av:PointCollection x:Key="ConnectorLocation">100,427.2 100,457.2 300,457.2 300,496.4</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <TryCatch sap:VirtualizedContainerService.HintSize="489.6,460.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                          <TryCatch sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                             <TryCatch.Try>
                               <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" BodyFormat="application/xml" DisplayName="Http client" EnableSSLVerification="True" EndPoint="https://api.cloudinary.com/v1_1/drajywgee/video/upload" sap:VirtualizedContainerService.HintSize="204,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_3" Method="POST" Result="[out_SuccessResponse]" StatusCode="[status_code]" TimeoutMS="600000">
                                 <ui:HttpClient.Attachments>
@@ -250,15 +249,9 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\SendEmailException.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PlatformWorkflows\SendEmailException.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_To">
-                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailAddress" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
-                                          <Literal x:TypeArguments="x:String">Twitter Automation Post text/Media Exception</Literal>
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_Body">
-                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="exception.Message" />
-                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_To">[in_EmailAddress]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_Subject">Twitter Automation Post text/Media Exception</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_Body">[exception.Message]</InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                   </Sequence>
@@ -267,7 +260,7 @@
                             </TryCatch.Catches>
                           </TryCatch>
                           <FlowStep.Next>
-                            <FlowDecision x:Name="__ReferenceID6" Condition="[status_code = 200]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+                            <FlowDecision x:Name="__ReferenceID5" Condition="[status_code = 200]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -278,7 +271,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <FlowDecision.True>
-                                <FlowStep x:Name="__ReferenceID7">
+                                <FlowStep x:Name="__ReferenceID6">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:Point x:Key="ShapeLocation">20,513.6</av:Point>
@@ -298,17 +291,6 @@
                           </FlowStep.Next>
                         </FlowStep>
                       </FlowDecision.True>
-                      <FlowDecision.False>
-                        <FlowStep x:Name="__ReferenceID5">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">180,273.6</av:Point>
-                              <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;The file time duration is more than 60 sec&quot;]" />
-                        </FlowStep>
-                      </FlowDecision.False>
                     </FlowDecision>
                   </FlowStep.Next>
                 </FlowStep>
@@ -334,22 +316,6 @@
         <x:Reference>__ReferenceID4</x:Reference>
         <x:Reference>__ReferenceID5</x:Reference>
         <x:Reference>__ReferenceID6</x:Reference>
-        <x:Reference>__ReferenceID7</x:Reference>
-        <FlowStep>
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">410,513.6</av:Point>
-              <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Cloudinary upload failed!&quot;]">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:LogMessage>
-        </FlowStep>
       </Flowchart>
     </Sequence>
   </Sequence>

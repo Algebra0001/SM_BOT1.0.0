@@ -51,7 +51,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>850.4,1172.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>850.4,1373.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TwitterUpdate_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -171,7 +171,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TwitterUpdate" sap:VirtualizedContainerService.HintSize="572.8,1108" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TwitterUpdate" sap:VirtualizedContainerService.HintSize="764.8,1308.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="resp" />
       <Variable x:TypeArguments="x:String" Name="textbody" />
@@ -182,7 +182,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="510.4,996" sap2010:WorkflowViewState.IdRef="TryCatch_17">
+    <TryCatch DisplayName="Try Catch - General exception Handler" sap:VirtualizedContainerService.HintSize="702.4,1196.8" sap2010:WorkflowViewState.IdRef="TryCatch_17">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -190,7 +190,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="TwitterUpdate" sap:VirtualizedContainerService.HintSize="473.6,764.8" sap2010:WorkflowViewState.IdRef="Sequence_99">
+        <Sequence DisplayName="TwitterUpdate" sap:VirtualizedContainerService.HintSize="665.6,965.6" sap2010:WorkflowViewState.IdRef="Sequence_99">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="twitterStatus" />
           </Sequence.Variables>
@@ -200,7 +200,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="411.2,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Started Twitter Posting&quot;]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="603.2,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Started Twitter Posting&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -208,7 +208,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <If sap2010:Annotation.AnnotationText="This condition checks the input file and confirms the presence of the media path i.e. if the media file is present or not" Condition="[in_CurrentMediaPath &lt;&gt; &quot;&quot;]" DisplayName="If - Media Presence" sap:VirtualizedContainerService.HintSize="411.2,560" sap2010:WorkflowViewState.IdRef="If_35">
+          <If sap2010:Annotation.AnnotationText="This condition checks the input file and confirms the presence of the media path i.e. if the media file is present or not" Condition="[in_CurrentMediaPath &lt;&gt; &quot;&quot;]" DisplayName="If - Media Presence" sap:VirtualizedContainerService.HintSize="603.2,760.8" sap2010:WorkflowViewState.IdRef="If_35">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -217,13 +217,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="377.6,332.8" sap2010:WorkflowViewState.IdRef="Sequence_89">
+              <Sequence sap:VirtualizedContainerService.HintSize="569.6,533.6" sap2010:WorkflowViewState.IdRef="Sequence_89">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If sap2010:Annotation.AnnotationText="This condition is to make sure that a post was not repeated and hence reduces the effect of calling the API endpoint multiple times." Condition="[Not in_CurrentStatus.Contains(&quot;T - Posted&quot;)]" DisplayName="If - Has Posted(Media)" sap:VirtualizedContainerService.HintSize="334.4,243.2" sap2010:WorkflowViewState.IdRef="If_31">
+                <If sap2010:Annotation.AnnotationText="This condition is to make sure that a post was not repeated and hence reduces the effect of calling the API endpoint multiple times." Condition="[Not in_CurrentStatus.Contains(&quot;T - Posted&quot;)]" DisplayName="If - Has Posted(Media)" sap:VirtualizedContainerService.HintSize="526.4,444" sap2010:WorkflowViewState.IdRef="If_31">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -277,10 +277,10 @@
                             <InArgument x:TypeArguments="scg:List(x:String)">[New List(of String)]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <If sap2010:Annotation.AnnotationText="This condition is to ensure that media file is one or more in the input file" Condition="[mediaArray.Length &gt;= 1]" DisplayName="If - Confirm Media" sap:VirtualizedContainerService.HintSize="433.6,112.8" sap2010:WorkflowViewState.IdRef="If_37">
+                        <If sap2010:Annotation.AnnotationText="This condition is to ensure that media file is one or more in the input file" Condition="[mediaArray.Length &gt;= 1]" DisplayName="If - Confirm Media" sap:VirtualizedContainerService.HintSize="433.6,227.2" sap2010:WorkflowViewState.IdRef="If_37">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                             </scg:Dictionary>
@@ -396,15 +396,9 @@
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\SendEmailException.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="PlatformWorkflows\SendEmailException.xaml">
                                                   <ui:InvokeWorkflowFile.Arguments>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="in_To">
-                                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailAddress" />
-                                                    </InArgument>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
-                                                      <Literal x:TypeArguments="x:String">Twitter Automation Image files Exception</Literal>
-                                                    </InArgument>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="in_Body">
-                                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="exception.Message" />
-                                                    </InArgument>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="in_To">[in_EmailAddress]</InArgument>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="in_Subject">Twitter Automation Image files Exception</InArgument>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="in_Body">[exception.Message]</InArgument>
                                                   </ui:InvokeWorkflowFile.Arguments>
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -746,7 +740,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="476.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="668.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -757,19 +751,25 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_127">
+            <Sequence sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_127">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\SendEmailException.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="PlatformWorkflows\SendEmailException.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\SendEmailException.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="PlatformWorkflows\SendEmailException.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="in_To">[in_EmailAddress]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_Subject">General exception</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_Body">[exception.Message]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
             </Sequence>
           </ActivityAction>
