@@ -6,10 +6,14 @@
     <x:Property Name="in_FileInput" Type="InArgument(x:String)" />
     <x:Property Name="out_SuccessResponse" Type="OutArgument(x:String)" />
     <x:Property Name="in_EmailAddress" Type="InArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <this:VB.in_EmailAddress>
     <InArgument x:TypeArguments="x:String" />
   </this:VB.in_EmailAddress>
+  <this:VB.in_Config>
+    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
+  </this:VB.in_Config>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -207,7 +211,7 @@
                               <av:PointCollection x:Key="ConnectorLocation">100,427.2 100,457.2 300,457.2 300,496.4</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <TryCatch sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                          <TryCatch sap:VirtualizedContainerService.HintSize="489.6,460.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                             <TryCatch.Try>
                               <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" BodyFormat="application/xml" DisplayName="Http client" EnableSSLVerification="True" EndPoint="https://api.cloudinary.com/v1_1/drajywgee/video/upload" sap:VirtualizedContainerService.HintSize="204,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_3" Method="POST" Result="[out_SuccessResponse]" StatusCode="[status_code]" TimeoutMS="600000">
                                 <ui:HttpClient.Attachments>
@@ -249,9 +253,15 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\SendEmailException.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PlatformWorkflows\SendEmailException.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_To">[in_EmailAddress]</InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_Subject">Twitter Automation Post text/Media Exception</InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_Body">[exception.Message]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
+                                          <Literal x:TypeArguments="x:String">Cloudinary Post Exception</Literal>
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_Body">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="exception.Message" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                                          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                                        </InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                   </Sequence>

@@ -10,6 +10,7 @@
     <x:Property Name="in_FilePath" Type="InArgument(x:String)" />
     <x:Property Name="out_FacebookStatus" Type="OutArgument(x:String)" />
     <x:Property Name="in_EmailAddress" Type="InArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <this:System.in_FilePath>
     <InArgument x:TypeArguments="x:String" />
@@ -17,10 +18,13 @@
   <this:System.in_EmailAddress>
     <InArgument x:TypeArguments="x:String" />
   </this:System.in_EmailAddress>
+  <this:System.in_Config>
+    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
+  </this:System.in_Config>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>850.4,3293.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>850.4,855.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>System_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -147,14 +151,14 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="784.8,3228.8" sap2010:WorkflowViewState.IdRef="Sequence_41">
+  <Sequence sap:VirtualizedContainerService.HintSize="552,790.4" sap2010:WorkflowViewState.IdRef="Sequence_41">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="722.4,3116.8" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="489.6,678.4" sap2010:WorkflowViewState.IdRef="TryCatch_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -162,7 +166,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="System" sap:VirtualizedContainerService.HintSize="685.6,2885.6" sap2010:WorkflowViewState.IdRef="Sequence_32">
+        <Sequence DisplayName="System" sap:VirtualizedContainerService.HintSize="705.6,3571.2" sap2010:WorkflowViewState.IdRef="Sequence_32">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="accessToken" />
             <Variable x:TypeArguments="x:String" Name="photoPath" />
@@ -191,7 +195,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="623.2,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Started Facebook Posting&quot;]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="643.2,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Started Facebook Posting&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -199,7 +203,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <ui:MultipleAssign sap2010:Annotation.AnnotationText="This multiple assignment is used to get values from the config file" DisplayName="config values" sap:VirtualizedContainerService.HintSize="623.2,112.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+          <ui:MultipleAssign sap2010:Annotation.AnnotationText="This multiple assignment is used to get values from the config file" DisplayName="config values" sap:VirtualizedContainerService.HintSize="643.2,112.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_29">
@@ -302,7 +306,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:MultipleAssign>
-          <If Condition="[photoArr.Length &gt;1]" sap:VirtualizedContainerService.HintSize="623.2,2528" sap2010:WorkflowViewState.IdRef="If_7">
+          <If Condition="[photoArr.Length &gt;1]" sap:VirtualizedContainerService.HintSize="643.2,3213.6" sap2010:WorkflowViewState.IdRef="If_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -310,7 +314,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="476.8,711.2" sap2010:WorkflowViewState.IdRef="Sequence_53">
+              <Sequence sap:VirtualizedContainerService.HintSize="609.6,1396.8" sap2010:WorkflowViewState.IdRef="Sequence_53">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="jsonBody" />
                   <Variable x:TypeArguments="x:String" Name="multiCon" />
@@ -323,13 +327,13 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[photoArr]">
+                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="566.4,738.4" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[photoArr]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="x:String">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="300,142.4" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="532.8,550.4" sap2010:WorkflowViewState.IdRef="Sequence_55">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="conId" />
                           <Variable x:TypeArguments="x:Int32" Name="idStatus" />
@@ -341,10 +345,10 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="489.6,460.8" sap2010:WorkflowViewState.IdRef="TryCatch_6">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -392,10 +396,10 @@
                             </Sequence>
                           </TryCatch.Try>
                           <TryCatch.Catches>
-                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="456,296" sap2010:WorkflowViewState.IdRef="Catch`1_6">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -403,22 +407,28 @@
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                 </ActivityAction.Argument>
-                                <Sequence sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                                <Sequence sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_58">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\SendEmailException.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PlatformWorkflows\SendEmailException.xaml">
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PlatformWorkflows\SendEmailException.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PlatformWorkflows\SendEmailException.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_To">[in_EmailAddress]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_Subject">Facebook Automation Video Posting Exception</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_Body">[exception.Message]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
+                                        <Literal x:TypeArguments="x:String">Facebook Automation Video Posting Exception</Literal>
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_Body">
+                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="exception.Message" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                                        <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                                      </InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
@@ -433,12 +443,12 @@
                   </ui:ForEach.Body>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
-                <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+                <Assign sap:VirtualizedContainerService.HintSize="566.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_6">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[multiIds]</OutArgument>
                   </Assign.To>
@@ -446,7 +456,7 @@
                     <InArgument x:TypeArguments="x:String">[String.Join(",", idList)]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:ReadTextFile File="{x:Null}" Content="[jsonBody]" DisplayName="Read Text File" FileName="Data\Input\multi.json" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
+                <ui:ReadTextFile File="{x:Null}" Content="[jsonBody]" DisplayName="Read Text File" FileName="Data\Input\multi.json" sap:VirtualizedContainerService.HintSize="566.4,52.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -454,7 +464,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:ReadTextFile>
-                <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_7">
+                <Assign sap:VirtualizedContainerService.HintSize="566.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_7">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[httpBody]</OutArgument>
                   </Assign.To>
@@ -462,7 +472,7 @@
                     <InArgument x:TypeArguments="x:String">[jsonBody.Replace("in_Text", in_Description).Replace("""listPath""", multiIds)]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[httpBody]" BodyFormat="application/json" DisplayName="HTTP Request for Video POST action" EnableSSLVerification="True" EndPoint="[multiUrl]" sap:VirtualizedContainerService.HintSize="433.6,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_26" Method="POST" OAuth2Token="[in_AccessToken]" Result="[multiCon]" StatusCode="[multiStatus]" TimeoutMS="120000">
+                <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[httpBody]" BodyFormat="application/json" DisplayName="HTTP Request for Video POST action" EnableSSLVerification="True" EndPoint="[multiUrl]" sap:VirtualizedContainerService.HintSize="566.4,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_26" Method="POST" OAuth2Token="[in_AccessToken]" Result="[multiCon]" StatusCode="[multiStatus]" TimeoutMS="120000">
                   <ui:HttpClient.Attachments>
                     <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                   </ui:HttpClient.Attachments>
@@ -479,7 +489,7 @@
                     <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                   </ui:HttpClient.UrlSegments>
                 </ui:HttpClient>
-                <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_9">
+                <Assign sap:VirtualizedContainerService.HintSize="566.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_9">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[out_FacebookStatus]</OutArgument>
                   </Assign.To>
@@ -634,10 +644,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="688.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="456,513.6" sap2010:WorkflowViewState.IdRef="Catch`1_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -649,13 +659,20 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[exception.Message]" />
-              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Error: &quot; + exception.Message]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="387.2,148.8" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Facebook Automation Bot Exception" To="[in_EmailAddress]">
+              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Error: &quot; + exception.Message]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="387.2,148.8" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Facebook Bot Automation Exception" To="[in_EmailAddress]">
                 <ui:SendOutlookMail.Files>
                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                 </ui:SendOutlookMail.Files>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </ui:SendOutlookMail>
             </Sequence>
           </ActivityAction>
